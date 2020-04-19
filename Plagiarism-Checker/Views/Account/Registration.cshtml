@@ -1,0 +1,41 @@
+﻿@model Plagiarism_Checker.Models.AccountDTO.Registration
+@{
+    ViewBag.Title = "Home Page";
+}
+<div asp-validation-summary=" All" class="text-danger"></div>
+@using (Html.BeginForm("Register", "Account", FormMethod.Post, new { enctype = "multipart/form-data", IdUser = "signupform" }))
+{
+    @Html.LabelFor(n => n.Name, "First name  ");<br />
+    @Html.EditorFor(n => n.Name);<br />
+    @Html.ValidationMessageFor(n => n.Name, "", new { @class = "text-danger" })<br />
+
+    @Html.LabelFor(n => n.Surname, "Last name  ");<br />
+    @Html.EditorFor(n => n.Surname);<br />
+    @Html.ValidationMessageFor(n => n.Surname, "", new { @class = "text-danger" })<br />
+
+    @Html.LabelFor(n => n.Email, "Email  ");<br />
+    @Html.EditorFor(n => n.Email);<br />
+    @Html.ValidationMessageFor(n => n.Email, "", new { @class = "text-danger" })<br />
+
+    @Html.LabelFor(n => n.Email, "Teacher?");
+    @Html.CheckBoxFor(n=>n.isTeacher);<br/>
+
+    @Html.LabelFor(n => n.student_number, "Student number: ");<br />
+    @Html.EditorFor(n => n.student_number);<br />
+    @Html.ValidationMessageFor(n => n.student_number, "", new { @class = "text-danger" })<br />
+
+    @Html.LabelFor(n => n.Password1, "Password  ");<br />
+    @Html.EditorFor(n => n.Password1, new { @class = "form-control", placeholder = "Password" });<br />
+    @Html.ValidationMessageFor(n => n.Password1, "", new { @class = "text-danger" })<br />
+
+    @Html.LabelFor(n => n.Password2, "Confirm Password  ");<br />
+    @Html.EditorFor(n => n.Password2, new { @class = "form-control", placeholder = "Password" });<br />
+    @Html.ValidationMessageFor(n => n.Password2, "", new { @class = "text-danger" })<br />
+
+    <input type="submit" />
+}
+@section scripts{
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <partial name="_ValidationScriptsPartial" />
+    <script src="~/lib/jquery-ajax-unobtrusive/dist/jquery.unobtrusive-ajax.min.js"></script>
+}

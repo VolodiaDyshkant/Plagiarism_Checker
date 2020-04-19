@@ -1,0 +1,31 @@
+﻿@model Plagiarism_Checker.Models.AdminDTO.AllUsers
+@{
+    ViewData["Title"] = "UsersList";
+}
+
+<h1>UsersList</h1>
+
+<form method="post" asp-controller="Admin" asp-action="Delete">
+    <h2>Teachers:</h2>
+    @foreach (var i in Model.allTeachers)
+    {
+        <h4 style="float:left">@i.name</h4>
+        <input type="hidden" value="@i.id" />
+        <div style="margin-left:auto; margin-right:0">
+            <input type="submit" value="Delete" />
+        </div>
+        <div style="clear:both;"></div>
+        <hr />
+    }
+    <h2>Students:</h2>
+    @foreach (var i in Model.allStudents)
+    {
+        <h4 style="float:left">@i.name</h4>
+        <input type="hidden" value="@i.id" />
+        <div style="margin-left:auto; margin-right:0">
+            <input type="submit" value="Delete" />
+        </div>
+        <div style="clear:both;"></div>
+        <hr />
+    }
+</form>
