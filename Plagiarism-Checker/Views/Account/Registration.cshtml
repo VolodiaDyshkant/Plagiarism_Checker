@@ -2,38 +2,89 @@
 @{
     ViewBag.Title = "Home Page";
 }
-<div asp-validation-summary=" All" class="text-danger"></div>
-@using (Html.BeginForm("Register", "Account", FormMethod.Post, new { enctype = "multipart/form-data", IdUser = "signupform" }))
-{
-    @Html.LabelFor(n => n.Name, "First name  ");<br />
-    @Html.EditorFor(n => n.Name);<br />
-    @Html.ValidationMessageFor(n => n.Name, "", new { @class = "text-danger" })<br />
+<h2 style="font-weight: bolder; color: #ffffff; font-size:35px;">WELOME! </h2>
+<p style="color: #949494;">
+    ВІТАЄМО ВАС В СЕРЕДОВИЩІ ОНЛАЙН-ОСВІТИ
+</p>
 
-    @Html.LabelFor(n => n.Surname, "Last name  ");<br />
-    @Html.EditorFor(n => n.Surname);<br />
-    @Html.ValidationMessageFor(n => n.Surname, "", new { @class = "text-danger" })<br />
+<svg width="max" height="77" x="0" y="100" style="opacity: 1; display:block; margin:auto">
+    <defs>
+        <linearGradient gradientUnits="userSpaceOnUse"
+                        id="gradient_background_color" x1="716.9913431370388"
+                        y1="337.9635071284274" x2="840" y2="0">
+            <stop offset="0%"
+                  stop-color="rgb(63, 63, 63)" stop-opacity="1"></stop>
+            <stop offset="0%" stop-color="rgb(69, 69, 69)" stop-opacity="1"></stop>
+            <stop offset="0%" stop-color="rgb(35, 35, 35)" stop-opacity="1"></stop>
+            <stop offset="16%" stop-color="rgb(49, 49, 49)" stop-opacity="1"></stop>
+            <stop offset="38%" stop-color="rgb(93, 93, 93)" stop-opacity="1"></stop>
+            <stop offset="48%" stop-color="rgb(129, 128, 128)" stop-opacity="1"></stop>
+            <stop offset="55.804614485981304%" stop-color="rgb(102, 101, 101)" stop-opacity="1"></stop>
+            <stop offset="63%" stop-color="rgb(88, 87, 87)" stop-opacity="1"></stop>
+            <stop offset="74%" stop-color="rgb(70, 70, 70)" stop-opacity="1"></stop>
+            <stop offset="86%" stop-color="rgb(50, 50, 50)" stop-opacity="1"></stop>
+            <stop offset="96.92610981308411%" stop-color="rgb(40, 40, 40)" stop-opacity="1"></stop>
+        </linearGradient>
+    </defs>
+    <path d="M0 0 L1840 0 C1840 0 1840 0 1840 0 L1840 77 C1840 77 1840 77 1840 77 L0 77 C0 77 0 77 0 77 L0 0 C0 0 0 0 0 0 Z"
+          stroke-width="0" stroke="none" stroke-dasharray="none" fill="url(#gradient_background_color)"></path>
 
-    @Html.LabelFor(n => n.Email, "Email  ");<br />
-    @Html.EditorFor(n => n.Email);<br />
-    @Html.ValidationMessageFor(n => n.Email, "", new { @class = "text-danger" })<br />
+    <text class="InSVG" x="50%" y="50%" alignment-baseline="middle" text-anchor="middle" stroke="#ffffff">REGISTER:</text>
+</svg>
+<hr>
+<br>
+<br>
 
-    @Html.LabelFor(n => n.Email, "Teacher?");
-    @Html.CheckBoxFor(n=>n.isTeacher);<br/>
 
-    @Html.LabelFor(n => n.student_number, "Student number: ");<br />
-    @Html.EditorFor(n => n.student_number);<br />
-    @Html.ValidationMessageFor(n => n.student_number, "", new { @class = "text-danger" })<br />
+@*<div asp-validation-summary=" All" class="text-danger"></div>*@
+<div style="display:flex; justify-content:center;">
 
-    @Html.LabelFor(n => n.Password1, "Password  ");<br />
-    @Html.EditorFor(n => n.Password1, new { @class = "form-control", placeholder = "Password" });<br />
-    @Html.ValidationMessageFor(n => n.Password1, "", new { @class = "text-danger" })<br />
 
-    @Html.LabelFor(n => n.Password2, "Confirm Password  ");<br />
-    @Html.EditorFor(n => n.Password2, new { @class = "form-control", placeholder = "Password" });<br />
-    @Html.ValidationMessageFor(n => n.Password2, "", new { @class = "text-danger" })<br />
+    <form method="post" asp-controller="Account" asp-action="Login" style="max-width:350px;">
+        <div asp-validation-summary="ModelOnly"></div>
+        <div>
+            <label asp-for="Name">Введіть свою дані:</label><br />
+            <div style="display:flex;">
+                <input asp-for="Name" value="Fist Name" style="max-width:48%;margin-left:0;" />
+                <input asp-for="Surname" value="Last Name" style="max-width:48%;margin-right:0;" />
+            </div>
+            <span asp-validation-for="Name"></span>
+            <span asp-validation-for="Surname"></span>
 
-    <input type="submit" />
-}
+        </div>
+
+        <div>
+            <label asp-for="Email">Введіть свою електронну адресу:</label><br />
+            <input asp-for="Email" value="Email Address" />
+            <span asp-validation-for="Email"></span>
+        </div>
+
+        <div>
+            <label asp-for="nin">Введать ІПН (індивідуальний податковий номер):</label><br />
+            <input asp-for="nin" value="" />
+            <span asp-validation-for="nin"></span>
+        </div>
+
+        <div>
+            <label asp-for="Password1">Введіть пароль:</label><br />
+            <input asp-for="Password1" value="Password" />
+            <span asp-validation-for="Password1"></span>
+        </div>
+        <div>
+            <label asp-for="Password2">Підтвердіть пароль:</label><br />
+            <input asp-for="Password2" value="Confirm Password" />
+            <span asp-validation-for="Password2"></span>
+        </div>
+        <br />
+            <div style="text-align:center"><input type="submit" value="ЗАРЕЄСТРУВАТИСЬ" class="button2" style="max-width: 60%;" />
+    </div></form>
+</div>
+
+<br>
+<br>
+<hr>
+
+
 @section scripts{
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <partial name="_ValidationScriptsPartial" />
