@@ -1,27 +1,72 @@
 ﻿@model Plagiarism_Checker.Models.AccountDTO.LogIn
 
-<h2>Log in</h2>
+ 
+<p style="font-weight: bold; color: #e7e7e7; font-size:26px;">
+    Щоб розпочати, будь ласка, <a href="#" style="font-weight: bolder;">увійдіть у систему</a>
+    ﻿або <a href="#" style="font-weight: bolder;">створіть обліковий запис.</a>
+</p>
+<hr>
+
+<svg width="max" height="77" x="0" y="100" style="opacity: 1; display:block; margin:auto">
+    <defs>
+        <linearGradient gradientUnits="userSpaceOnUse"
+                        id="gradient_background_color" x1="716.9913431370388"
+                        y1="337.9635071284274" x2="840" y2="0">
+            <stop offset="0%"
+                  stop-color="rgb(63, 63, 63)" stop-opacity="1"></stop>
+            <stop offset="0%" stop-color="rgb(69, 69, 69)" stop-opacity="1"></stop>
+            <stop offset="0%" stop-color="rgb(35, 35, 35)" stop-opacity="1"></stop>
+            <stop offset="16%" stop-color="rgb(49, 49, 49)" stop-opacity="1"></stop>
+            <stop offset="38%" stop-color="rgb(93, 93, 93)" stop-opacity="1"></stop>
+            <stop offset="48%" stop-color="rgb(129, 128, 128)" stop-opacity="1"></stop>
+            <stop offset="55.804614485981304%" stop-color="rgb(102, 101, 101)" stop-opacity="1"></stop>
+            <stop offset="63%" stop-color="rgb(88, 87, 87)" stop-opacity="1"></stop>
+            <stop offset="74%" stop-color="rgb(70, 70, 70)" stop-opacity="1"></stop>
+            <stop offset="86%" stop-color="rgb(50, 50, 50)" stop-opacity="1"></stop>
+            <stop offset="96.92610981308411%" stop-color="rgb(40, 40, 40)" stop-opacity="1"></stop>
+        </linearGradient>
+    </defs>
+    <path d="M0 0 L1840 0 C1840 0 1840 0 1840 0 L1840 77 C1840 77 1840 77 1840 77 L0 77 C0 77 0 77 0 77 L0 0 C0 0 0 0 0 0 Z"
+          stroke-width="0" stroke="none" stroke-dasharray="none" fill="url(#gradient_background_color)"></path>
+
+    <text class="InSVG" x="50%" y="50%" alignment-baseline="middle" text-anchor="middle" stroke="#ffffff">LOGIN:</text>
+</svg>
+<hr>
+<br>
+<br>
+
 <div asp-validation-summary=" All" class="text-danger"></div>
-<form method="post" asp-controller="Account" asp-action="Login">
-    @*<div asp-validation-summary="ModelOnly"></div>*@
-    <div>
-        <label asp-for="Email"></label><br />
-        <input asp-for="Email" />
-        @*<span asp-validation-for="Email"></span>*@
-    </div>
-    <div>
-        <label asp-for="Password"></label><br />
-        <input asp-for="Password" />
-        @*<span asp-validation-for="Password"></span>*@
-    </div>
-    <br />
-    <div style="float:left;width:70px;margin-right:5px">
-        <input type="submit" value="Submit" />
-    </div>
-</form>
-<div>
-    <form method="get" asp-controller="Account" asp-action="Registration">
-        <input type="submit" value="Register" />
+<div style="display:flex; justify-content:center;">
+
+
+    <form method="post" asp-controller="Account" asp-action="Login" style="max-width:350px;">
+        @*<div asp-validation-summary="ModelOnly"></div>*@
+        <div>
+            <label asp-for="Email">Введіть свою електронну адресу:</label><br />
+            <input asp-for="Email" value="Email Address" />
+            @*<span asp-validation-for="Email"></span>*@
+        </div>
+
+        <div>
+            <label asp-for="Password">Введіть пароль:</label><br />
+            <input asp-for="Password" value="Password" />
+            @*<span asp-validation-for="Password"></span>*@
+        </div>
+        <br />
+        <div style="display: flex; justify-content:flex-start;">
+            @*paste onclick="location.href='@Url.Action()*@
+            <input type="submit" value="УВІЙТИ" class="button2" style="max-width: 50%;" />
+            <button class="buttonF"> Забули пароль? </button>
+        </div>
     </form>
 </div>
+<div style="display:flex; justify-content:center;">
+    <form method="get" asp-controller="Account" asp-action="Registration" style="text-align:center">
+        <input type="submit" value="ЗАРЕЄСТРУВАТИСЬ" class="button2" style="max-width:70%"/>
+    </form>
+</div>
+<br>
+<br>
+<hr>
+
 <div style="clear:both;"></div>

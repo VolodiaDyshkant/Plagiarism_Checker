@@ -36,6 +36,11 @@ namespace Plagiarism_Checker.Controllers
             _mapper = new Mapper(config);
         }
 
+        public IActionResult ThanksFR()
+        {
+            return View();
+        }
+
         public IActionResult Registration()
         {
             return View();
@@ -58,12 +63,16 @@ namespace Plagiarism_Checker.Controllers
             if(model.isTeacher)
             {
                 _userManager.AddToRoleAsync(user, "Teacher").Wait();
+                return View("ThanksFR", "Account");
+
             }
             else
             {
                 _userManager.AddToRoleAsync(user, "Student").Wait();
+                return View("ThanksFR", "Account");
+
             }
-            return RedirectToAction("Index", "Home");
+
         }
 
         public IActionResult LogIn()
@@ -92,6 +101,14 @@ namespace Plagiarism_Checker.Controllers
                 {
                     ModelState.AddModelError("", "Password or Email is invalid!");
                     return View();
+                }
+                if(User.IsInRole("Teacher"))
+                {
+                    
+                }
+                else
+                {
+                    return RedirectToAction("Index", "Student");
                 }
             }
             return RedirectToAction("Index", "Home");
