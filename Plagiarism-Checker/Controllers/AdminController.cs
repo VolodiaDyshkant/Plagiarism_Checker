@@ -33,11 +33,11 @@ namespace Plagiarism_Checker.Controllers
             List<User> students = _userManager.GetUsersInRoleAsync("Student").Result.ToList();
             foreach (var u in teachers)
             {
-                users.allTeachers.Add(new _User(u.Id,u.UserName + ' ' + u.surname));
+                users.allTeachers.Add(new _User(u.Id,u.UserName));
             }
             foreach (var u in students)
             {
-                users.allStudents.Add(new _User(u.Id, u.UserName + ' ' + u.surname));
+                users.allStudents.Add(new _User(u.Id, u.UserName));
             }
             return View(users);
         }

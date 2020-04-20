@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Plagiarism_Checker;
 
 namespace Plagiarism_Checker.Migrations
 {
     [DbContext(typeof(UniverContext))]
-    partial class UniverContextModelSnapshot : ModelSnapshot
+    [Migration("20200420180249_Full_Database")]
+    partial class Full_Database
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

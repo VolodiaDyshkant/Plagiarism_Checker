@@ -13054,11 +13054,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\3 курс\\_Net\\Experiments\\Plagiarism-Checker\\Plagiarism-Checker\\Plagiarism-Checker.csproj",
+      "projectUniqueName": "D:\\3 курс\\_Net\\Plagiarism-Checker\\Plagiarism-Checker\\Plagiarism-Checker.csproj",
       "projectName": "Plagiarism-Checker",
-      "projectPath": "D:\\3 курс\\_Net\\Experiments\\Plagiarism-Checker\\Plagiarism-Checker\\Plagiarism-Checker.csproj",
+      "projectPath": "D:\\3 курс\\_Net\\Plagiarism-Checker\\Plagiarism-Checker\\Plagiarism-Checker.csproj",
       "packagesPath": "C:\\Users\\volod\\.nuget\\packages\\",
-      "outputPath": "D:\\3 курс\\_Net\\Experiments\\Plagiarism-Checker\\Plagiarism-Checker\\obj\\",
+      "outputPath": "D:\\3 курс\\_Net\\Plagiarism-Checker\\Plagiarism-Checker\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

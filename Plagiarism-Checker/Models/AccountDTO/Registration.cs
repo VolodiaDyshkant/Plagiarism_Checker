@@ -28,8 +28,5 @@ namespace Plagiarism_Checker.Models.AccountDTO
         public string student_number { get; set; }
         [RegularExpression("([0-9]{10})")]
         public string nin { get; set; }
-
-
-
     }
 }

@@ -29,10 +29,9 @@ namespace Plagiarism_Checker.Controllers
             _roleManager = roleManager;
             var config = new MapperConfiguration(cfg => cfg.CreateMap<Registration, User>()
             .ForMember(u => u.Email, opt => opt.MapFrom(i => i.Email))
-            .ForMember(u => u.UserName, opt => opt.MapFrom(i => i.Name))
-            .ForMember(u => u.surname, opt => opt.MapFrom(i => i.Surname))
-            .ForMember(u => u.student_number, opt => opt.MapFrom(i => i.student_number))
-            .ForMember(u => u.nin, opt => opt.MapFrom(i => i.nin)));
+            .ForMember(u => u.UserName, opt => opt.MapFrom(i => i.Name+' '+i.Surname))
+            .ForMember(u => u.StudentNumber, opt => opt.MapFrom(i => i.student_number))
+            .ForMember(u => u.Nin, opt => opt.MapFrom(i => i.nin)));
 
             _mapper = new Mapper(config);
         }
