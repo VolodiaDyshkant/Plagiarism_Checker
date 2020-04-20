@@ -75,9 +75,21 @@
             <input asp-for="Password2" value="Confirm Password" />
             <span asp-validation-for="Password2"></span>
         </div>
+
+        <div>
+            <label asp-for="isTeacher">Для викладача:</label><br />
+            <input asp-for="isTeacher" checked="checked"
+                   id="isTeacher"
+                   name="isTeacher"
+                   type="checkbox"
+                   value="true" />
+        </div>
+
         <br />
-            <div style="text-align:center;display:flex;justify-content:center"><input type="submit" value="ЗАРЕЄСТРУВАТИСЬ" class="button2" style="max-width: 70%;" />
-    </div></form>
+        <div style="text-align:center;display:flex;justify-content:center">
+            <input type="submit" value="ЗАРЕЄСТРУВАТИСЬ" class="button2" style="max-width: 70%;" />
+        </div>
+    </form>
 </div>
 
 <br>

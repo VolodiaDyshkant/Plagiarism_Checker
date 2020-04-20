@@ -68,3 +68,5 @@ C:\Users\Administrator\Documents\GitHub\Plagiarism_Checker\Plagiarism-Checker\ob
 C:\Users\Administrator\Documents\GitHub\Plagiarism_Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Plagiarism-Checker.genruntimeconfig.cache
 C:\Users\Administrator\Documents\GitHub\Plagiarism_Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Plagiarism-Checker.csproj.CopyComplete
 C:\Users\Administrator\Documents\GitHub\Plagiarism_Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Razor\Views\Account\ThanksFR.cshtml.g.cs
+C:\Users\Administrator\Documents\GitHub\Plagiarism_Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Razor\Views\Admin\MainPage.cshtml.g.cs
+C:\Users\Administrator\Documents\GitHub\Plagiarism_Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_StudentLayout.cshtml.g.cs

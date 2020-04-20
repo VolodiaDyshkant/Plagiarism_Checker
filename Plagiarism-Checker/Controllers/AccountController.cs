@@ -103,6 +103,14 @@ namespace Plagiarism_Checker.Controllers
                     ModelState.AddModelError("", "Password or Email is invalid!");
                     return View();
                 }
+                if(User.IsInRole("Teacher"))
+                {
+                    
+                }
+                else
+                {
+                    return RedirectToAction("Index", "Student");
+                }
             }
             return RedirectToAction("Index", "Home");
         }
