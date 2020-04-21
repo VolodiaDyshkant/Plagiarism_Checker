@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Administrator\\Documents\\GitHub\\Plagiarism_Checker\\Plagiarism-Checker\\Plagiarism-Checker.csproj": {}
+    "C:\\Users\\Administrator\\Documents\\GitHub\\net\\Plagiarism_Checker\\Plagiarism-Checker\\Plagiarism-Checker.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Administrator\\Documents\\GitHub\\Plagiarism_Checker\\Plagiarism-Checker\\Plagiarism-Checker.csproj": {
+    "C:\\Users\\Administrator\\Documents\\GitHub\\net\\Plagiarism_Checker\\Plagiarism-Checker\\Plagiarism-Checker.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Administrator\\Documents\\GitHub\\Plagiarism_Checker\\Plagiarism-Checker\\Plagiarism-Checker.csproj",
+        "projectUniqueName": "C:\\Users\\Administrator\\Documents\\GitHub\\net\\Plagiarism_Checker\\Plagiarism-Checker\\Plagiarism-Checker.csproj",
         "projectName": "Plagiarism-Checker",
-        "projectPath": "C:\\Users\\Administrator\\Documents\\GitHub\\Plagiarism_Checker\\Plagiarism-Checker\\Plagiarism-Checker.csproj",
+        "projectPath": "C:\\Users\\Administrator\\Documents\\GitHub\\net\\Plagiarism_Checker\\Plagiarism-Checker\\Plagiarism-Checker.csproj",
         "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Administrator\\Documents\\GitHub\\Plagiarism_Checker\\Plagiarism-Checker\\obj\\",
+        "outputPath": "C:\\Users\\Administrator\\Documents\\GitHub\\net\\Plagiarism_Checker\\Plagiarism-Checker\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -44,6 +44,10 @@
             "AutoMapper": {
               "target": "Package",
               "version": "[9.0.0, )"
+            },
+            "Microsoft.AspNet.WebHelpers": {
+              "target": "Package",
+              "version": "[3.2.7, )"
             },
             "Microsoft.AspNetCore.App": {
               "suppressParent": "All",

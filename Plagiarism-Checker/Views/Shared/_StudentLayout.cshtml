@@ -29,10 +29,8 @@
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div style="background:#2c2c2c">
-                    <p>
-                        <a class="navbar-brand" style="color:#cccccc" asp-area="" asp-controller="Student" asp-action="ListHomework">Невиконані завдання</a>
-                    </p>
+                <div style="text-align:center">
+                        <a class="navbar-brand" style="color:#cccccc" asp-area="" asp-controller="Student" asp-action="ListUnsolvedHomework">Невиконані завдання</a>
                 </div>
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     @if (!User.Identity.IsAuthenticated)

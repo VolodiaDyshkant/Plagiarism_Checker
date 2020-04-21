@@ -1,8 +1,58 @@
-﻿
+﻿@model Plagiarism_Checker.Models.StudentDTO.StudentTasks
+
 @{
-    ViewData["Title"] = "MainPage";
+    ViewData["Title"] = "Головна";
     Layout = "~/Views/Shared/_StudentLayout.cshtml";
 }
 
-<h1>MainPage</h1>
+<h1>Головна</h1>
+<div onclick="location.href='@Url.Action("ListSubjects", "Student")'">
+    <h2 style="color: #000000;">ПЕРЕЛІК ДИСЦИПЛІН</h2>
+</div>
+<div class="largeDarkDiv" style="flex-direction:column;">
+    <h2>Найближчі самостійні:</h2>
+    @*@foreach (var item in Model.Student.TestsPreview)
+        {
+            <div style="width:80%;height:180px;margin-bottom:20px;border:solid;border-width:1px">
+                <div style="background-color:#d8d8d8">
+                    <p style="color:#000000">@item.Subject</p>
+                </div>
+                <p>@item.Name</p>
+                <p>@item.Model</p>
+
+                @if (item.Available)
+                {
+                    <p>In stock</p>
+                }
+                else
+                {
+                    <p>Not available</p>
+                }
+                <div style="float:left;margin-top:8px">
+                    @using (Html.BeginForm("More", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                    {
+                        <input type="hidden" value="@item.Id" name="id" />
+                        <input style="width:85px" type="submit" value="More" />
+                    }
+                </div>
+                <div style="float:left;margin-top:8px">
+                    @using (Html.BeginForm("Basket", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                    {
+                        <input type="hidden" value="@item.Id" name="id" />
+                        <input style="width:85px" type="submit" value="Basket" />
+                    }
+                </div>
+                <div style="clear:both;"></div>
+            </div>
+            if (Convert.ToInt32(item.Id) % 4 == 0)
+            {
+                <div style="clear:both;"></div>
+            }
+        }*@
+
+    <button onclick="location.href='@Url.Action("ListTestWork", "Student")'" class="button2">УСІ САМОСТІЙНІ</button>
+</div>
+<div class="largeDarkDiv" style="flex-direction:row;">
+    <h2 onclick="location.href='@Url.Action("ListHomework", "Student")'">Домашнє завдання:</h2>
+</div>
 
