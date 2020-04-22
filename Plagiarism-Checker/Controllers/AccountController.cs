@@ -106,9 +106,14 @@ namespace Plagiarism_Checker.Controllers
                 {
                     
                 }
-                else
+                if (User.IsInRole("Student"))
                 {
                     return RedirectToAction("Index", "Student");
+                }
+                else
+                {
+                    return RedirectToAction("UsersList", "Admin");
+
                 }
             }
             return RedirectToAction("Index", "Home");
