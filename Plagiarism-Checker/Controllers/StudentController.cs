@@ -26,12 +26,14 @@ namespace Plagiarism_Checker.Controllers
         public Repository<Discipline> _Discipline;
         public Repository<Time> _Time;
         public Repository<Day> _Day;
+        public Repository<Models.Group> _Group;
+        public List<Subjects> subjects;
 
 
         public StudentController(UserManager<User> userManager, StudentTasks studentTasks,
             Repository<StudentLesson> student_Lesson, Repository<Lesson> lesson, Repository<Models.Task> task,
             Repository<Assignment> assignment, Repository<Solution> solution, Repository<Schedule> schedule,
-            Repository<Discipline> discipline, Repository<Time> time, Repository<Day> day)
+            Repository<Discipline> discipline, Repository<Time> time, Repository<Day> day, List<Subjects> _subjects, Repository<Models.Group> group)
         {
             _userManager = userManager;
             this.studentTasks = studentTasks;
@@ -44,7 +46,25 @@ namespace Plagiarism_Checker.Controllers
             _Discipline = discipline;
             _Time = time;
             _Day = day;
+            _Group = group;
+            subjects = _subjects;
             studentTasksUpdate();
+            var r = new Regex(@"
+                (?<=[A-Z])(?=[A-Z][a-z]) |
+                 (?<=[^A-Z])(?=[A-Z]) |
+                 (?<=[A-Za-z])(?=[^A-Za-z])", RegexOptions.IgnorePatternWhitespace);
+
+            var current_sch = _Schedule.GetAll().Where(sch => sch.GroupId == _Group.GetAll().Where(g => g.StudentId == _userManager.GetUserId(User)).FirstOrDefault().Id);
+            foreach (var item in current_sch)
+            {
+                string NameDiscipline = _Discipline.GetById(item.DisciplineId).Name;
+                var Lector = _userManager.FindByIdAsync(item.TeacherId).Result;
+                string LectorName = r.Replace(Lector.UserName, " ");
+                string Time = _Time.GetById(item.TimeId).Time1.ToString();
+
+                subjects.Add(new Subjects(NameDiscipline,LectorName,Time));
+            }
+            
 
         }
 
@@ -53,7 +73,7 @@ namespace Plagiarism_Checker.Controllers
             StudentTasks studentTasksPreview = new StudentTasks();
             for (int i = 0; i < 3; i++)
             {
-                studentTasksPreview.SolvedHometasks.Add(studentTasks.SolvedHometasks.OrderBy(t => t.TaskAssignment.Deadline).ElementAt(i));
+                studentTasksPreview.Hometasks.Add(studentTasks.Hometasks.OrderBy(t => t.TaskAssignment.Deadline).ElementAt(i));
                 studentTasksPreview.Tests.Add(studentTasks.Tests.OrderBy(t => t.TaskAssignment.Deadline).ElementAt(i));
 
             }
@@ -80,6 +100,20 @@ namespace Plagiarism_Checker.Controllers
 
             var unsolvedHw = studentTasks.Hometasks.OrderBy(t => t.TaskAssignment.Deadline).ToList();
             return View(unsolvedHw);
+        }
+        public IActionResult ListSubjects()
+        {
+            return View(subjects);
+        }
+        public IActionResult ListTestWork()
+        {
+            return View(studentTasks.SolvedTests);
+        }
+
+        public IActionResult ListUnsolvedTestWork()
+        {
+            var unsolvedTs = studentTasks.Tests.OrderBy(t => t.TaskAssignment.Deadline).ToList();
+            return View(unsolvedTs);
         }
         [HttpPost]
         public ActionResult AddSolutionPage(int id)
@@ -159,7 +193,7 @@ namespace Plagiarism_Checker.Controllers
                 string NameDiscipline = _Discipline.GetById(_Schedule.GetById(current_lesson.ScheduleId).DisciplineId).Name;
                 var Lector = _userManager.FindByIdAsync(_Schedule.GetById(current_lesson.ScheduleId).TeacherId).Result;
                 string LectorName = r.Replace(Lector.UserName, " ");
-                string Time = _Day.GetById(_Schedule.GetById(current_lesson.ScheduleId).DayId).Day1 + " " + _Time.GetById(_Schedule.GetById(current_lesson.ScheduleId).TimeId).Time1;
+                string Time = _Day.GetById(_Schedule.GetById(current_lesson.ScheduleId).DayId).Day1 + " " + _Time.GetById(_Schedule.GetById(current_lesson.ScheduleId).TimeId).Time1.ToString();
                 var HomeworkAssign = _Assignment.GetById(item.AssignmentId);
 
 
@@ -189,7 +223,7 @@ namespace Plagiarism_Checker.Controllers
                     string NameDiscipline_test = _Discipline.GetById(_Schedule.GetById(current_lesson_test.ScheduleId).DisciplineId).Name;
                     var Lector_test = _userManager.FindByIdAsync(_Schedule.GetById(current_lesson_test.ScheduleId).TeacherId).Result;
                     string LectorName_test = r.Replace(Lector_test.UserName, " ");
-                    string Time_test = _Day.GetById(_Schedule.GetById(current_lesson_test.ScheduleId).DayId).Day1 + " " + _Time.GetById(_Schedule.GetById(current_lesson_test.ScheduleId).TimeId).Time1;
+                    string Time_test = _Day.GetById(_Schedule.GetById(current_lesson_test.ScheduleId).DayId).Day1 + " " + _Time.GetById(_Schedule.GetById(current_lesson_test.ScheduleId).TimeId).Time1.ToString();
                     var TestAssign = _Assignment.GetById(item_test.AssignmentId);
 
 

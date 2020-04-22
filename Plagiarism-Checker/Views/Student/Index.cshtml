@@ -11,48 +11,41 @@
 </div>
 <div class="largeDarkDiv" style="flex-direction:column;">
     <h2>Найближчі самостійні:</h2>
-    @*@foreach (var item in Model.Student.TestsPreview)
-        {
-            <div style="width:80%;height:180px;margin-bottom:20px;border:solid;border-width:1px">
-                <div style="background-color:#d8d8d8">
-                    <p style="color:#000000">@item.Subject</p>
-                </div>
-                <p>@item.Name</p>
-                <p>@item.Model</p>
-
-                @if (item.Available)
-                {
-                    <p>In stock</p>
-                }
-                else
-                {
-                    <p>Not available</p>
-                }
-                <div style="float:left;margin-top:8px">
-                    @using (Html.BeginForm("More", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
-                    {
-                        <input type="hidden" value="@item.Id" name="id" />
-                        <input style="width:85px" type="submit" value="More" />
-                    }
-                </div>
-                <div style="float:left;margin-top:8px">
-                    @using (Html.BeginForm("Basket", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
-                    {
-                        <input type="hidden" value="@item.Id" name="id" />
-                        <input style="width:85px" type="submit" value="Basket" />
-                    }
-                </div>
-                <div style="clear:both;"></div>
+    @foreach (var item in Model.Tests)
+    {
+        <div style="width:80%;height:180px;margin-bottom:20px;border:solid;border-width:1px">
+            <div style="background-color:#d8d8d8">
+                <p style="color:#000000">@item.NameOfDiscipline</p>
             </div>
-            if (Convert.ToInt32(item.Id) % 4 == 0)
-            {
-                <div style="clear:both;"></div>
-            }
-        }*@
+            <p style="color:#606060; font-size:13px">@item.TaskAssignment.Requirenments</p>
+            <p style="color:#555454; font-size:10px; justify-content:flex-end;">@item.Lector - @item.Time</p>
 
+            <div style="float:left;margin-top:8px">
+                <button style="width:85px" type="submit" class="button2" onclick="location.href='@Url.Action("AddSolutionPage", "Student", new { id = item._Task.Id })'" value="Переглянути" />
+                }
+            </div>
+            <div style="clear:both;"></div>
+        </div>
+    }
     <button onclick="location.href='@Url.Action("ListTestWork", "Student")'" class="button2">УСІ САМОСТІЙНІ</button>
 </div>
 <div class="largeDarkDiv" style="flex-direction:row;">
     <h2 onclick="location.href='@Url.Action("ListHomework", "Student")'">Домашнє завдання:</h2>
+    @foreach (var item in Model.Hometasks)
+    {
+        <div style="width:80%;height:180px;margin-bottom:20px;border:solid;border-width:1px">
+            <div style="background-color:#d8d8d8">
+                <p style="color:#000000">@item.NameOfDiscipline</p>
+            </div>
+            <p style="color:#606060; font-size:13px">@item.TaskAssignment.Requirenments</p>
+            <p style="color:#555454; font-size:10px; justify-content:flex-end;">@item.Lector - @item.Time</p>
+
+            <div style="float:left;margin-top:8px">
+                <button style="width:85px" type="submit" class="button2" onclick="location.href='@Url.Action("AddSolutionPage", "Student", new { id = item._Task.Id })'" value="Виконати" />
+                }
+            </div>
+            <div style="clear:both;"></div>
+        </div>
+    }
 </div>
 

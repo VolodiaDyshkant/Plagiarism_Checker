@@ -1,0 +1,20 @@
+﻿@model List<Plagiarism_Checker.Models.StudentDTO.Subjects>
+
+@{
+    ViewData["Title"] = "ListSubjects";
+    Layout = "~/Views/Shared/_StudentLayout.cshtml";
+}
+
+
+<div class="largelightDiv" style="flex-direction:row;">
+    <h2>Домашні завдання:</h2>
+    @foreach (var item in Model)
+    {
+        <div style="width:80%;height:180px;margin-bottom:20px;border:solid;border-width:1px">
+            <p style="color:#000000; font-size:15px;"> @item.NameOfDiscipline </p>
+            <p style="color:#000000; font-size:15px; justify-content:flex-end;"> @item.Lector - @item.Time </p>
+            <div style="clear:both;"></div>
+        </div>
+    }
+    <button onclick="location.href='@Url.Action("Index", "Student")'" class="button2">НА ГОЛОВНУ</button>
+</div>

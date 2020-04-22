@@ -112,3 +112,6 @@ C:\Users\Administrator\Documents\GitHub\net\Plagiarism_Checker\Plagiarism-Checke
 C:\Users\Administrator\Documents\GitHub\net\Plagiarism_Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Razor\Views\Student\ListUnsolvedHomework.cshtml.g.cs
 C:\Users\Administrator\Documents\GitHub\net\Plagiarism_Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Razor\Views\Student\AddSolutionPage.cshtml.g.cs
 C:\Users\Administrator\Documents\GitHub\net\Plagiarism_Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Razor\Views\Student\SolvedTask.cshtml.g.cs
+C:\Users\Administrator\Documents\GitHub\net\Plagiarism_Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Razor\Views\Student\ListHomework.cshtml.g.cs
+C:\Users\Administrator\Documents\GitHub\net\Plagiarism_Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Razor\Views\Student\ListTestWork.cshtml.g.cs
+C:\Users\Administrator\Documents\GitHub\net\Plagiarism_Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Razor\Views\Student\ListUnsolvedTests.cshtml.g.cs
