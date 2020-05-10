@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "Add File";
+}
+
+
+@using (Html.BeginForm("AddFile", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+
+    <h1>@Html.Label("File")</h1>
+    <table>
+
+        <tr>
+            <td>@Html.Label("file")</td>
+            <td><input type="file" name="files" multiple /><br></td>
+        </tr>
+
+
+
+
+
+    </table>
+    <p><input type="submit" value="Submit" /><input type="reset" value="Reset" /></p>
+}
