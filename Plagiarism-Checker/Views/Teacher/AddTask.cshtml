@@ -1,0 +1,37 @@
+﻿@model Plagiarism_Checker.Models.Teacher.TaskAdd
+@{
+    Layout = "~/Views/Shared/_TeacherLayout.cshtml";
+}
+<div align="center">
+
+    <form asp-action="AddTask" method="post">
+        <label asp-for="taskAdd.IsTest">Тип завдання:</label><br>
+        <input type="checkbox" id="taskAdd.IsTest" name="taskAdd.IsTest" value="true"><br>
+        <input type="checkbox" id="taskAdd.IsTest" name="taskAdd.IsTest" value="false"><br>
+        <div><span asp-validation-for="taskAdd.IsTest" class="text-danger"></span></div>
+
+        <label asp-for="taskAdd.Lesson">Оберіть дисципліну та групу:</label><br>
+        <select asp-for="taskAdd.Lesson">
+            @foreach (var item in Model.subjects)
+            {
+            <option value="@item.LessonId">@item.NameOfDiscipline , @item.Group </option>
+            }
+        </select>
+        <div><span asp-validation-for="taskAdd.Lesson"></span></div>
+
+
+        <label asp-for="taskAdd.Deadline">Вкажіть до якого часу завдання можна надіслати:</label><br>
+        <input type="datetime" id="taskAdd.Deadline" name="taskAdd.Deadline"><br>
+        <div><span asp-validation-for="taskAdd.Deadline"></span></div>
+
+
+        <label asp-for="taskAdd.Requirenments">Висловіть свої вимоги до завдання: що студент повинен виконати: на що звернути увагу:</label><br>
+        <textarea id="taskAdd.Skills" name="taskAdd.Requirenments"></textarea>
+        <div><span asp-validation-for="taskAdd.Requirenments"></span></div>
+
+        <br>
+        <input type="submit" value="Додати" class="button2">
+    </form>
+</div>
+
+

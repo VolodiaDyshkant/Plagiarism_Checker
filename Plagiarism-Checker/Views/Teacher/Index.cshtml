@@ -1,4 +1,4 @@
-﻿@model Plagiarism_Checker.Models.Student.StudentTasks
+﻿@model Plagiarism_Checker.Models.Teacher.TeacherTasks
 
 @{
     Layout = "~/Views/Shared/_TeacherLayout.cshtml";
@@ -22,7 +22,7 @@
                 <p style="color:#000000">@item.NameOfDiscipline</p>
             </div>
             <p style="color:#d8d8d8; font-size:13px">@item.TaskAssignment.Requirenments</p>
-            <p style="color:#555454; font-size:10px; justify-content:flex-end;">@item.Lector - @item.Time</p>
+            <p style="color:#555454; font-size:10px; justify-content:flex-end;">@item.Group - @item.Time</p>
 
             <div style="display: flex;justify-content: center;margin-top:8px">
                 <button style="font-size:6px; padding:0.0025em 0.75em; border:none;" type="submit" class="button2" onclick="location.href='@Url.Action("AddSolutionPage", "Student", new { id = item._Task.Id })'">Переглянути</button>
@@ -31,11 +31,13 @@
             <div style="clear:both;"></div>
         </div>
     }
-<button onclick="location.href='@Url.Action("ListTestWork", "Teacher")'" class="button2">УСІ НАЙБЛИЖЧІ САМОСТІЙНІ</button>
+<button onclick="location.href='@Url.Action("ListTests", "Teacher")'" class="button2">УСІ НАЙБЛИЖЧІ САМОСТІЙНІ</button>
 </div>
-<button onclick="location.href='@Url.Action("ListHomework", "Teacher")'" class="button2">ПЕРЕГЛЯНУТИ ГОТОВІ ДОМАШНІ</button>
-<button onclick="location.href='@Url.Action("ListSolvedTests", "Teacher")'" class="button2">ПЕРЕГЛЯНУТИ ГОТОВІ САМОСТІЙНІ</button>
-
+<div style="display: flex">
+    <button onclick="location.href='@Url.Action("ListHomework", "Teacher")'" class="button2">ПЕРЕГЛЯНУТИ ГОТОВІ ДОМАШНІ</button>
+    <button onclick="location.href='@Url.Action("ListSolvedTests", "Teacher")'" class="button2">ПЕРЕГЛЯНУТИ ГОТОВІ САМОСТІЙНІ</button>
+    <button onclick="location.href='@Url.Action("AddTask", "Teacher")'" class="button2">ДОДАТИ ДОМАШНЄ ЗАВДАННЯ/САМОСТІЙНУ РОБОТУ</button>
+</div>
 
 
 
