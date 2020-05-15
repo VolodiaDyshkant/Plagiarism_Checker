@@ -31,36 +31,88 @@ D:\3 курс\_Net\Experiments\Plagiarism-Checker\Plagiarism-Checker\obj\Debug\n
 D:\3 курс\_Net\Experiments\Plagiarism-Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Razor\Views\Account\LogIn.g.cshtml.cs
 D:\3 курс\_Net\Experiments\Plagiarism-Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Plagiarism-Checker.csprojAssemblyReference.cache
 D:\3 курс\_Net\Experiments\Plagiarism-Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Razor\Views\Admin\UsersList.g.cshtml.cs
-D:\3 курс\_Net\Plagiarism-Checker\Plagiarism-Checker\bin\Debug\netcoreapp2.2\Plagiarism-Checker.deps.json
-D:\3 курс\_Net\Plagiarism-Checker\Plagiarism-Checker\bin\Debug\netcoreapp2.2\Plagiarism-Checker.runtimeconfig.json
-D:\3 курс\_Net\Plagiarism-Checker\Plagiarism-Checker\bin\Debug\netcoreapp2.2\Plagiarism-Checker.runtimeconfig.dev.json
-D:\3 курс\_Net\Plagiarism-Checker\Plagiarism-Checker\bin\Debug\netcoreapp2.2\Plagiarism-Checker.dll
-D:\3 курс\_Net\Plagiarism-Checker\Plagiarism-Checker\bin\Debug\netcoreapp2.2\Plagiarism-Checker.pdb
-D:\3 курс\_Net\Plagiarism-Checker\Plagiarism-Checker\bin\Debug\netcoreapp2.2\Plagiarism-Checker.Views.dll
-D:\3 курс\_Net\Plagiarism-Checker\Plagiarism-Checker\bin\Debug\netcoreapp2.2\Plagiarism-Checker.Views.pdb
-D:\3 курс\_Net\Plagiarism-Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Plagiarism-Checker.csprojAssemblyReference.cache
-D:\3 курс\_Net\Plagiarism-Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Plagiarism-Checker.csproj.CoreCompileInputs.cache
-D:\3 курс\_Net\Plagiarism-Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Plagiarism-Checker.RazorAssemblyInfo.cache
-D:\3 курс\_Net\Plagiarism-Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Plagiarism-Checker.RazorAssemblyInfo.cs
-D:\3 курс\_Net\Plagiarism-Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Plagiarism-Checker.AssemblyInfoInputs.cache
-D:\3 курс\_Net\Plagiarism-Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Plagiarism-Checker.AssemblyInfo.cs
-D:\3 курс\_Net\Plagiarism-Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Plagiarism-Checker.TagHelpers.input.cache
-D:\3 курс\_Net\Plagiarism-Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Plagiarism-Checker.TagHelpers.output.cache
-D:\3 курс\_Net\Plagiarism-Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Plagiarism-Checker.RazorCoreGenerate.cache
-D:\3 курс\_Net\Plagiarism-Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Razor\Views\Account\LogIn.g.cshtml.cs
-D:\3 курс\_Net\Plagiarism-Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Razor\Views\Account\Registration.g.cshtml.cs
-D:\3 курс\_Net\Plagiarism-Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Razor\Views\Admin\UsersList.g.cshtml.cs
-D:\3 курс\_Net\Plagiarism-Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Razor\Views\Home\Index.g.cshtml.cs
-D:\3 курс\_Net\Plagiarism-Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Razor\Views\Home\Privacy.g.cshtml.cs
-D:\3 курс\_Net\Plagiarism-Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Razor\Views\Shared\Error.g.cshtml.cs
-D:\3 курс\_Net\Plagiarism-Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_CookieConsentPartial.g.cshtml.cs
-D:\3 курс\_Net\Plagiarism-Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_Layout.g.cshtml.cs
-D:\3 курс\_Net\Plagiarism-Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_ValidationScriptsPartial.g.cshtml.cs
-D:\3 курс\_Net\Plagiarism-Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Razor\Views\_ViewImports.g.cshtml.cs
-D:\3 курс\_Net\Plagiarism-Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Razor\Views\_ViewStart.g.cshtml.cs
-D:\3 курс\_Net\Plagiarism-Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Plagiarism-Checker.RazorTargetAssemblyInfo.cache
-D:\3 курс\_Net\Plagiarism-Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Plagiarism-Checker.RazorTargetAssemblyInfo.cs
-D:\3 курс\_Net\Plagiarism-Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Plagiarism-Checker.Views.pdb
-D:\3 курс\_Net\Plagiarism-Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Plagiarism-Checker.dll
-D:\3 курс\_Net\Plagiarism-Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Plagiarism-Checker.pdb
-D:\3 курс\_Net\Plagiarism-Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Plagiarism-Checker.csproj.CopyComplete
+C:\Users\Administrator\Documents\GitHub\Plagiarism_Checker\Plagiarism-Checker\bin\Debug\netcoreapp2.2\appsettings.Development.json
+C:\Users\Administrator\Documents\GitHub\Plagiarism_Checker\Plagiarism-Checker\bin\Debug\netcoreapp2.2\appsettings.json
+C:\Users\Administrator\Documents\GitHub\Plagiarism_Checker\Plagiarism-Checker\bin\Debug\netcoreapp2.2\Properties\launchSettings.json
+C:\Users\Administrator\Documents\GitHub\Plagiarism_Checker\Plagiarism-Checker\bin\Debug\netcoreapp2.2\Plagiarism-Checker.deps.json
+C:\Users\Administrator\Documents\GitHub\Plagiarism_Checker\Plagiarism-Checker\bin\Debug\netcoreapp2.2\Plagiarism-Checker.runtimeconfig.json
+C:\Users\Administrator\Documents\GitHub\Plagiarism_Checker\Plagiarism-Checker\bin\Debug\netcoreapp2.2\Plagiarism-Checker.runtimeconfig.dev.json
+C:\Users\Administrator\Documents\GitHub\Plagiarism_Checker\Plagiarism-Checker\bin\Debug\netcoreapp2.2\Plagiarism-Checker.dll
+C:\Users\Administrator\Documents\GitHub\Plagiarism_Checker\Plagiarism-Checker\bin\Debug\netcoreapp2.2\Plagiarism-Checker.pdb
+C:\Users\Administrator\Documents\GitHub\Plagiarism_Checker\Plagiarism-Checker\bin\Debug\netcoreapp2.2\Plagiarism-Checker.Views.dll
+C:\Users\Administrator\Documents\GitHub\Plagiarism_Checker\Plagiarism-Checker\bin\Debug\netcoreapp2.2\Plagiarism-Checker.Views.pdb
+C:\Users\Administrator\Documents\GitHub\Plagiarism_Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Plagiarism-Checker.csprojAssemblyReference.cache
+C:\Users\Administrator\Documents\GitHub\Plagiarism_Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Plagiarism-Checker.RazorAssemblyInfo.cache
+C:\Users\Administrator\Documents\GitHub\Plagiarism_Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Plagiarism-Checker.RazorAssemblyInfo.cs
+C:\Users\Administrator\Documents\GitHub\Plagiarism_Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Plagiarism-Checker.AssemblyInfoInputs.cache
+C:\Users\Administrator\Documents\GitHub\Plagiarism_Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Plagiarism-Checker.AssemblyInfo.cs
+C:\Users\Administrator\Documents\GitHub\Plagiarism_Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Plagiarism-Checker.TagHelpers.input.cache
+C:\Users\Administrator\Documents\GitHub\Plagiarism_Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Plagiarism-Checker.TagHelpers.output.cache
+C:\Users\Administrator\Documents\GitHub\Plagiarism_Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Plagiarism-Checker.RazorCoreGenerate.cache
+C:\Users\Administrator\Documents\GitHub\Plagiarism_Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Razor\Views\Account\LogIn.cshtml.g.cs
+C:\Users\Administrator\Documents\GitHub\Plagiarism_Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Razor\Views\Account\Registration.cshtml.g.cs
+C:\Users\Administrator\Documents\GitHub\Plagiarism_Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Razor\Views\Admin\UsersList.cshtml.g.cs
+C:\Users\Administrator\Documents\GitHub\Plagiarism_Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Razor\Views\Home\Index.cshtml.g.cs
+C:\Users\Administrator\Documents\GitHub\Plagiarism_Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Razor\Views\Home\Privacy.cshtml.g.cs
+C:\Users\Administrator\Documents\GitHub\Plagiarism_Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Razor\Views\Shared\Error.cshtml.g.cs
+C:\Users\Administrator\Documents\GitHub\Plagiarism_Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_CookieConsentPartial.cshtml.g.cs
+C:\Users\Administrator\Documents\GitHub\Plagiarism_Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_Layout.cshtml.g.cs
+C:\Users\Administrator\Documents\GitHub\Plagiarism_Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+C:\Users\Administrator\Documents\GitHub\Plagiarism_Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Razor\Views\_ViewImports.cshtml.g.cs
+C:\Users\Administrator\Documents\GitHub\Plagiarism_Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Razor\Views\_ViewStart.cshtml.g.cs
+C:\Users\Administrator\Documents\GitHub\Plagiarism_Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Plagiarism-Checker.RazorTargetAssemblyInfo.cache
+C:\Users\Administrator\Documents\GitHub\Plagiarism_Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Plagiarism-Checker.RazorTargetAssemblyInfo.cs
+C:\Users\Administrator\Documents\GitHub\Plagiarism_Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Plagiarism-Checker.Views.pdb
+C:\Users\Administrator\Documents\GitHub\Plagiarism_Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Plagiarism-Checker.dll
+C:\Users\Administrator\Documents\GitHub\Plagiarism_Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Plagiarism-Checker.pdb
+C:\Users\Administrator\Documents\GitHub\Plagiarism_Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Plagiarism-Checker.genruntimeconfig.cache
+C:\Users\Administrator\Documents\GitHub\Plagiarism_Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Plagiarism-Checker.csproj.CopyComplete
+C:\Users\Administrator\Documents\GitHub\Plagiarism_Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Razor\Views\Account\ThanksFR.cshtml.g.cs
+C:\Users\Administrator\Documents\GitHub\Plagiarism_Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Razor\Views\Admin\MainPage.cshtml.g.cs
+C:\Users\Administrator\Documents\GitHub\Plagiarism_Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_StudentLayout.cshtml.g.cs
+C:\Users\Administrator\Documents\GitHub\net\Plagiarism_Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Plagiarism-Checker.csprojAssemblyReference.cache
+C:\Users\Administrator\Documents\GitHub\net\Plagiarism_Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Plagiarism-Checker.RazorAssemblyInfo.cache
+C:\Users\Administrator\Documents\GitHub\net\Plagiarism_Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Plagiarism-Checker.RazorAssemblyInfo.cs
+C:\Users\Administrator\Documents\GitHub\net\Plagiarism_Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Plagiarism-Checker.AssemblyInfoInputs.cache
+C:\Users\Administrator\Documents\GitHub\net\Plagiarism_Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Plagiarism-Checker.AssemblyInfo.cs
+C:\Users\Administrator\Documents\GitHub\net\Plagiarism_Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Plagiarism-Checker.dll
+C:\Users\Administrator\Documents\GitHub\net\Plagiarism_Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Plagiarism-Checker.pdb
+C:\Users\Administrator\Documents\GitHub\net\Plagiarism_Checker\Plagiarism-Checker\bin\Debug\netcoreapp2.2\appsettings.Development.json
+C:\Users\Administrator\Documents\GitHub\net\Plagiarism_Checker\Plagiarism-Checker\bin\Debug\netcoreapp2.2\appsettings.json
+C:\Users\Administrator\Documents\GitHub\net\Plagiarism_Checker\Plagiarism-Checker\bin\Debug\netcoreapp2.2\Properties\launchSettings.json
+C:\Users\Administrator\Documents\GitHub\net\Plagiarism_Checker\Plagiarism-Checker\bin\Debug\netcoreapp2.2\Plagiarism-Checker.deps.json
+C:\Users\Administrator\Documents\GitHub\net\Plagiarism_Checker\Plagiarism-Checker\bin\Debug\netcoreapp2.2\Plagiarism-Checker.runtimeconfig.json
+C:\Users\Administrator\Documents\GitHub\net\Plagiarism_Checker\Plagiarism-Checker\bin\Debug\netcoreapp2.2\Plagiarism-Checker.runtimeconfig.dev.json
+C:\Users\Administrator\Documents\GitHub\net\Plagiarism_Checker\Plagiarism-Checker\bin\Debug\netcoreapp2.2\Plagiarism-Checker.dll
+C:\Users\Administrator\Documents\GitHub\net\Plagiarism_Checker\Plagiarism-Checker\bin\Debug\netcoreapp2.2\Plagiarism-Checker.pdb
+C:\Users\Administrator\Documents\GitHub\net\Plagiarism_Checker\Plagiarism-Checker\bin\Debug\netcoreapp2.2\Plagiarism-Checker.Views.dll
+C:\Users\Administrator\Documents\GitHub\net\Plagiarism_Checker\Plagiarism-Checker\bin\Debug\netcoreapp2.2\Plagiarism-Checker.Views.pdb
+C:\Users\Administrator\Documents\GitHub\net\Plagiarism_Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Plagiarism-Checker.TagHelpers.input.cache
+C:\Users\Administrator\Documents\GitHub\net\Plagiarism_Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Plagiarism-Checker.TagHelpers.output.cache
+C:\Users\Administrator\Documents\GitHub\net\Plagiarism_Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Plagiarism-Checker.RazorCoreGenerate.cache
+C:\Users\Administrator\Documents\GitHub\net\Plagiarism_Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Razor\Views\Account\LogIn.cshtml.g.cs
+C:\Users\Administrator\Documents\GitHub\net\Plagiarism_Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Razor\Views\Account\Registration.cshtml.g.cs
+C:\Users\Administrator\Documents\GitHub\net\Plagiarism_Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Razor\Views\Account\ThanksFR.cshtml.g.cs
+C:\Users\Administrator\Documents\GitHub\net\Plagiarism_Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Razor\Views\Admin\UsersList.cshtml.g.cs
+C:\Users\Administrator\Documents\GitHub\net\Plagiarism_Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Razor\Views\Home\Index.cshtml.g.cs
+C:\Users\Administrator\Documents\GitHub\net\Plagiarism_Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Razor\Views\Home\Privacy.cshtml.g.cs
+C:\Users\Administrator\Documents\GitHub\net\Plagiarism_Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Razor\Views\Shared\Error.cshtml.g.cs
+C:\Users\Administrator\Documents\GitHub\net\Plagiarism_Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_CookieConsentPartial.cshtml.g.cs
+C:\Users\Administrator\Documents\GitHub\net\Plagiarism_Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_Layout.cshtml.g.cs
+C:\Users\Administrator\Documents\GitHub\net\Plagiarism_Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_StudentLayout.cshtml.g.cs
+C:\Users\Administrator\Documents\GitHub\net\Plagiarism_Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+C:\Users\Administrator\Documents\GitHub\net\Plagiarism_Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Razor\Views\Student\Index.cshtml.g.cs
+C:\Users\Administrator\Documents\GitHub\net\Plagiarism_Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Razor\Views\_ViewImports.cshtml.g.cs
+C:\Users\Administrator\Documents\GitHub\net\Plagiarism_Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Razor\Views\_ViewStart.cshtml.g.cs
+C:\Users\Administrator\Documents\GitHub\net\Plagiarism_Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Plagiarism-Checker.RazorTargetAssemblyInfo.cache
+C:\Users\Administrator\Documents\GitHub\net\Plagiarism_Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Plagiarism-Checker.RazorTargetAssemblyInfo.cs
+C:\Users\Administrator\Documents\GitHub\net\Plagiarism_Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Plagiarism-Checker.Views.pdb
+C:\Users\Administrator\Documents\GitHub\net\Plagiarism_Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Plagiarism-Checker.genruntimeconfig.cache
+C:\Users\Administrator\Documents\GitHub\net\Plagiarism_Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Plagiarism-Checker.csproj.CopyComplete
+C:\Users\Administrator\Documents\GitHub\net\Plagiarism_Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Razor\Views\Student\ListUnsolvedHomework.cshtml.g.cs
+C:\Users\Administrator\Documents\GitHub\net\Plagiarism_Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Razor\Views\Student\AddSolutionPage.cshtml.g.cs
+C:\Users\Administrator\Documents\GitHub\net\Plagiarism_Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Razor\Views\Student\SolvedTask.cshtml.g.cs
+C:\Users\Administrator\Documents\GitHub\net\Plagiarism_Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Razor\Views\Student\ListHomework.cshtml.g.cs
+C:\Users\Administrator\Documents\GitHub\net\Plagiarism_Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Razor\Views\Student\ListTestWork.cshtml.g.cs
+C:\Users\Administrator\Documents\GitHub\net\Plagiarism_Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Razor\Views\Student\ListUnsolvedTests.cshtml.g.cs
+C:\Users\Administrator\Documents\GitHub\net\Plagiarism_Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Razor\Views\Student\ListSubjects.cshtml.g.cs

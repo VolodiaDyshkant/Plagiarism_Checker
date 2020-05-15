@@ -1,0 +1,32 @@
+﻿@model Plagiarism_Checker.Models.Student.SolutionToTask
+@{
+    ViewData["Title"] = "SolvedTask";
+    Layout = "~/Views/Shared/_StudentLayout.cshtml";
+}
+
+
+<div class="largeDarkDiv" style="flex-direction:column;">
+    <h2>Виконанане завдання:</h2>
+    <div style="width:80%;height:180px;margin-bottom:20px;border:solid;border-width:1px">
+        <div style="background-color:#d8d8d8">
+            <p style="color:#000000">@Model.NameOfDiscipline</p>
+        </div>
+        <p style="color:#606060; font-size:13px">@Model.Requirements</p>
+        <p style="color:#555454; font-size:10px; justify-content:flex-end;">@Model.Lector - @Model.Time</p>
+        @if (Model.Percent > 10.0)
+        {
+            <p style="color:#d64747; font-size:11px; justify-content:flex-end; font-weight:900">@Model.Percent.ToString()</p>
+        }
+        else
+        {
+            <p style="color:#6b7b34; font-size:11px; justify-content:flex-end; font-weight:900">@Model.Percent.ToString()</p>
+
+        }
+
+        <div style="clear:both;"></div>
+    </div>
+
+
+    <button onclick="location.href='@Url.Action("Index", "Student")'" class="button2">НА ГОЛОВНУ</button>
+</div>
+

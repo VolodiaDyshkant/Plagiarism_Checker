@@ -1,0 +1,34 @@
+﻿@model Plagiarism_Checker.Models.Student.SolutionToTask
+
+@{
+    ViewData["Title"] = "AddSolution";
+    Layout = "~/Views/Shared/_StudentLayout.cshtml";
+}
+
+
+<div class="largeDarkDiv" style="flex-direction:column;">
+    <h2>Невиконанане завдання:</h2>
+    <div style="width:80%;height:180px;margin-bottom:20px;border:solid;border-width:1px">
+        <div style="background-color:#d8d8d8">
+            <p style="color:#000000">@Model.NameOfDiscipline</p>
+        </div>
+        <p style="color:#606060; font-size:13px">@Model.Requirements</p>
+        <p style="color:#555454; font-size:10px; justify-content:flex-end;">@Model.Lector - @Model.Time</p>
+
+        @using (Html.BeginForm("AddSolutionFile", "Student", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            @Html.AntiForgeryToken()
+
+            @Html.ValidationSummary(true)
+
+            @Html.LabelFor(model => model.PostedFile)
+            <input type="file" name="PostedFile" required>
+            <input type="submit" value="Завантажити" class="button2" />
+        }
+
+        <div style="clear:both;"></div>
+    </div>
+    
+
+    <button onclick="location.href='@Url.Action("Index", "Student")'" class="button2">НА ГОЛОВНУ</button>
+</div>

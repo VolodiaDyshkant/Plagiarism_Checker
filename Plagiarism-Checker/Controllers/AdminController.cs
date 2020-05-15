@@ -42,9 +42,20 @@ namespace Plagiarism_Checker.Controllers
             return View(users);
         }
 
-        public void DeleteUser(string id)
+        public async Task<IActionResult> DeleteUser(string id)
         {
-            
+            var user = await _userManager.FindByIdAsync(id);
+             _userManager.DeleteAsync(user).Wait();
+
+            return RedirectToAction("UsersList", "Admin");
+        }
+
+        public async Task<IActionResult> DeleteApplication(string id)
+        {
+            var user = await _userManager.FindByIdAsync(id);
+            _userManager.DeleteAsync(user).Wait();
+
+            return RedirectToAction("UsersList", "Admin");
         }
     }
 }

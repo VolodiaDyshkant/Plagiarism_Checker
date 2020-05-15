@@ -13,6 +13,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Plagiarism_Checker.Models;
 using Plagiarism_Checker.Models.Interfaces;
+using Plagiarism_Checker.Models.Student;
 using Plagiarism_Checker.Rpositories;
 
 namespace Plagiarism_Checker
@@ -49,7 +50,17 @@ namespace Plagiarism_Checker
             });
             services.AddDbContext<UniverContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("Default")));
- 
+
+            services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+            services.AddTransient(typeof(IRepository<>), typeof(Repository<>));
+
+            services.AddSingleton(typeof(IRepository<>), typeof(Repository<>));
+
+            services.AddTransient(typeof(StudentTasks));
+            services.AddTransient(typeof(List<Subjects>));
+
+
+
             //services.AddIdentity<User, IdentityRole>()
             //.AddEntityFrameworkStores<UniverContext>();
             services.AddIdentity<User, IdentityRole>(
@@ -75,7 +86,6 @@ namespace Plagiarism_Checker
        
             services.Configure<PasswordHasherOptions>(options =>
             options.CompatibilityMode = PasswordHasherCompatibilityMode.IdentityV2);
-            services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
             services.AddAuthorization();
         }
 

@@ -1,0 +1,51 @@
+﻿@model Plagiarism_Checker.Models.Student.StudentTasks
+
+@{
+    ViewData["Title"] = "Головна";
+    Layout = "~/Views/Shared/_StudentLayout.cshtml";
+}
+
+<h1>Головна</h1>
+<div onclick="location.href='@Url.Action("ListSubjects", "Student")'">
+    <h2 style="color: #000000;">ПЕРЕЛІК ДИСЦИПЛІН</h2>
+</div>
+<div class="largeDarkDiv" style="flex-direction:column;">
+    <h2>Найближчі самостійні:</h2>
+    @foreach (var item in Model.Tests)
+    {
+        <div style="width:80%;height:180px;margin-bottom:20px;border:solid;border-width:1px">
+            <div style="background-color:#d8d8d8">
+                <p style="color:#000000">@item.NameOfDiscipline</p>
+            </div>
+            <p style="color:#606060; font-size:13px">@item.TaskAssignment.Requirenments</p>
+            <p style="color:#555454; font-size:10px; justify-content:flex-end;">@item.Lector - @item.Time</p>
+
+            <div style="float:left;margin-top:8px">
+                <button style="width:85px" type="submit" class="button2" onclick="location.href='@Url.Action("AddSolutionPage", "Student", new { id = item._Task.Id })'" value="Переглянути" />
+                }
+            </div>
+            <div style="clear:both;"></div>
+        </div>
+    }
+    <button onclick="location.href='@Url.Action("ListTestWork", "Student")'" class="button2">УСІ САМОСТІЙНІ</button>
+</div>
+<div class="largeDarkDiv" style="flex-direction:row;">
+    <h2 onclick="location.href='@Url.Action("ListHomework", "Student")'">Домашнє завдання:</h2>
+    @foreach (var item in Model.Hometasks)
+    {
+        <div style="width:80%;height:180px;margin-bottom:20px;border:solid;border-width:1px">
+            <div style="background-color:#d8d8d8">
+                <p style="color:#000000">@item.NameOfDiscipline</p>
+            </div>
+            <p style="color:#606060; font-size:13px">@item.TaskAssignment.Requirenments</p>
+            <p style="color:#555454; font-size:10px; justify-content:flex-end;">@item.Lector - @item.Time</p>
+
+            <div style="float:left;margin-top:8px">
+                <button style="width:85px" type="submit" class="button2" onclick="location.href='@Url.Action("AddSolutionPage", "Student", new { id = item._Task.Id })'" value="Виконати" />
+                }
+            </div>
+            <div style="clear:both;"></div>
+        </div>
+    }
+</div>
+
