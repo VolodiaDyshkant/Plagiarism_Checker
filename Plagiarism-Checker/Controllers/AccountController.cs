@@ -119,8 +119,8 @@ namespace Plagiarism_Checker.Controllers
                 }
                 else
                 {
-                    return RedirectToAction("Index", "Student");
-                    //return RedirectToAction("UsersList", "Admin");
+                    //return RedirectToAction("Index", "Student");
+                    return RedirectToAction("UsersList", "Admin");
 
                 }
             }

@@ -15,6 +15,8 @@ using Plagiarism_Checker.Rpositories;
 
 namespace Plagiarism_Checker.Controllers
 {
+    [Authorize(Roles = "Student")]
+
     public class StudentController : Controller
     {
         private readonly UserManager<User> _userManager;
