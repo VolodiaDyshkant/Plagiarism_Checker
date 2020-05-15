@@ -6,10 +6,13 @@
 }
 
 <h1>Головна</h1>
-<div onclick="location.href='@Url.Action("ListSubjects", "Student")'">
-    <h2 style="color: #000000;">ПЕРЕЛІК ДИСЦИПЛІН</h2>
+<div onclick="location.href='@Url.Action("ListSubjects", "Student")'" style="min-height: 80px;
+    background: #333333;
+    justify-content: center;
+    padding: 2em;">
+    <h2 style="color: #000000; cursor:pointer;" >ПЕРЕЛІК ДИСЦИПЛІН</h2>
 </div>
-<div class="largeDarkDiv" style="flex-direction:column;">
+<div class="largeDarkDiv" style="flex-direction: column;margin: 5em;">
     <h2>Найближчі самостійні:</h2>
     @foreach (var item in Model.Tests)
     {
@@ -17,11 +20,11 @@
             <div style="background-color:#d8d8d8">
                 <p style="color:#000000">@item.NameOfDiscipline</p>
             </div>
-            <p style="color:#606060; font-size:13px">@item.TaskAssignment.Requirenments</p>
+            <p style="color:#d8d8d8; font-size:13px">@item.TaskAssignment.Requirenments</p>
             <p style="color:#555454; font-size:10px; justify-content:flex-end;">@item.Lector - @item.Time</p>
 
-            <div style="float:left;margin-top:8px">
-                <button style="width:85px" type="submit" class="button2" onclick="location.href='@Url.Action("AddSolutionPage", "Student", new { id = item._Task.Id })'">Переглянути</button>
+            <div style="display: flex;justify-content: center;margin-top:8px">
+                <button style="font-size:6px; padding:0.0025em 0.75em; border:none;" type="submit" class="button2" onclick="location.href='@Url.Action("AddSolutionPage", "Student", new { id = item._Task.Id })'">Переглянути</button>
                 
             </div>
             <div style="clear:both;"></div>
@@ -29,7 +32,7 @@
     }
     <button onclick="location.href='@Url.Action("ListTestWork", "Student")'" class="button2">УСІ САМОСТІЙНІ</button>
 </div>
-<div class="largeDarkDiv" style="flex-direction:row;">
+<div class="largeDarkDiv" style="flex-direction:row;margin: 5em;">
     <h2 onclick="location.href='@Url.Action("ListHomework", "Student")'">Домашнє завдання:</h2>
     @foreach (var item in Model.Hometasks)
     {
@@ -37,15 +40,17 @@
             <div style="background-color:#d8d8d8">
                 <p style="color:#000000">@item.NameOfDiscipline</p>
             </div>
-            <p style="color:#606060; font-size:13px">@item.TaskAssignment.Requirenments</p>
+            <p style="color:#d8d8d8; font-size:13px">@item.TaskAssignment.Requirenments</p>
             <p style="color:#555454; font-size:10px; justify-content:flex-end;">@item.Lector - @item.Time</p>
 
-            <div style="float:left;margin-top:8px">
-                <button style="width:85px" type="submit" class="button2" onclick="location.href='@Url.Action("AddSolutionPage", "Student", new { id = item._Task.Id })'">Виконати</button>
-                
+            <div style="display: flex;justify-content: center;margin-top:8px">
+                <button style="font-size:6px; padding:0.0025em 0.75em; border:none;" type="submit" class="button2" onclick="location.href='@Url.Action("AddSolutionPage", "Student", new { id = item._Task.Id })'">Виконати</button>
+
             </div>
             <div style="clear:both;"></div>
         </div>
+        <button onclick="location.href='@Url.Action("ListHomework", "Student")'" class="button2">ПЕРЕГЛЯНУТИ ГОТОВІ ДОМАШНІ</button>
+
     }
 </div>
 

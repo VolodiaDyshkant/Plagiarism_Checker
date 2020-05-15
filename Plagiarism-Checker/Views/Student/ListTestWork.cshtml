@@ -4,7 +4,7 @@
     Layout = "~/Views/Shared/_StudentLayout.cshtml";
 }
 
-<h1>ListTestWork</h1>
+<h1>Вітаємо!</h1>
 
 
 <div class="largeDarkDiv" style="flex-direction:column;">
@@ -15,7 +15,7 @@
             <div style="background-color:#d8d8d8">
                 <p style="color:#000000"> @item.NameOfDiscipline </p>
             </div>
-            <p style="color:#606060; font-size:13px"> @item.TaskAssignment.Requirenments </p>
+            <p style="color:#d8d8d8; font-size:13px"> @item.TaskAssignment.Requirenments </p>
             <p style="color:#555454; font-size:10px; justify-content:flex-end;"> @item.Lector - @item.Time </p>
             @if (item._Task.Percent > 10.0)
             {
@@ -28,5 +28,5 @@
             <div style="clear:both;"></div>
         </div>
     }
-    <button onclick="location.href='@Url.Action("ListUnsolvedTests", "Student")'" class="button2">Список не виконаних робіт</button>
+    <button onclick="location.href='@Url.Action("ListUnsolvedTests", "Student")'" class="button2">Список майбутніх робіт</button>
 </div>

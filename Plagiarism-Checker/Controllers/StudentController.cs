@@ -51,7 +51,6 @@ namespace Plagiarism_Checker.Controllers
             _Group = group;
             subjects = _subjects;
             studentTasks = _studentTasks;
-            studentTasksUpdate(HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier));
         }
 
         [Authorize]
