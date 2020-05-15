@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.AspNetCore.Authentication;
@@ -10,16 +11,20 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Plagiarism_Checker.Models;
 using Plagiarism_Checker.Models.AccountDTO;
+using Plagiarism_Checker.Models.Student;
 using Plagiarism_Checker.Rpositories;
 
 namespace Plagiarism_Checker.Controllers
 {
+
     public class AccountController : Controller
     {
         private readonly IMapper _mapper;
         private readonly RoleManager<IdentityRole> _roleManager;
         private readonly UserManager<User> _userManager;
         private readonly SignInManager<User> _signInManager;
+
+
         //private readonly UserRepository<User> db;
 
         public AccountController(UserManager<User> userManager, SignInManager<User> signInManager, RoleManager<IdentityRole> roleManager)
@@ -34,6 +39,7 @@ namespace Plagiarism_Checker.Controllers
             .ForMember(u => u.Nin, opt => opt.MapFrom(i => i.nin)));
 
             _mapper = new Mapper(config);
+
         }
 
         public IActionResult ThanksFR()
@@ -102,17 +108,19 @@ namespace Plagiarism_Checker.Controllers
                     ModelState.AddModelError("", "Password or Email is invalid!");
                     return View();
                 }
-                if(User.IsInRole("Teacher"))
+                if (_userManager.IsInRoleAsync(user, "Teacher").Result)
                 {
-                    
+
                 }
-                if (User.IsInRole("Student"))
+                if (_userManager.IsInRoleAsync(user, "Student").Result)
                 {
+
                     return RedirectToAction("Index", "Student");
                 }
                 else
                 {
-                    return RedirectToAction("UsersList", "Admin");
+                    return RedirectToAction("Index", "Student");
+                    //return RedirectToAction("UsersList", "Admin");
 
                 }
             }

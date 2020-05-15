@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Plagiarism_Checker.Models.StudentDTO
+namespace Plagiarism_Checker.Models.Student
 {
     public class FullTask
+
     {
         public FullTask(Task task, Assignment taskAssignment, string nameOfDiscipline, string lector, string time)
         {

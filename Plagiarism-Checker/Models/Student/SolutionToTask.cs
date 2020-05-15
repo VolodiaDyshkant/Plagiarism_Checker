@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Plagiarism_Checker.Models.StudentDTO
+namespace Plagiarism_Checker.Models.Student
 {
     public class SolutionToTask
     {
