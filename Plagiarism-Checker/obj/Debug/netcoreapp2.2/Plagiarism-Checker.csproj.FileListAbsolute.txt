@@ -116,3 +116,8 @@ C:\Users\Administrator\Documents\GitHub\net\Plagiarism_Checker\Plagiarism-Checke
 C:\Users\Administrator\Documents\GitHub\net\Plagiarism_Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Razor\Views\Student\ListTestWork.cshtml.g.cs
 C:\Users\Administrator\Documents\GitHub\net\Plagiarism_Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Razor\Views\Student\ListUnsolvedTests.cshtml.g.cs
 C:\Users\Administrator\Documents\GitHub\net\Plagiarism_Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Razor\Views\Student\ListSubjects.cshtml.g.cs
+C:\Users\Administrator\Documents\GitHub\net\Plagiarism_Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Razor\Views\Teacher\Index.cshtml.g.cs
+C:\Users\Administrator\Documents\GitHub\net\Plagiarism_Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_TeacherLayout.cshtml.g.cs
+C:\Users\Administrator\Documents\GitHub\net\Plagiarism_Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Razor\Views\Teacher\ListSubjects.cshtml.g.cs
+C:\Users\Administrator\Documents\GitHub\net\Plagiarism_Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Razor\Views\Teacher\ListHomework.cshtml.g.cs
+C:\Users\Administrator\Documents\GitHub\net\Plagiarism_Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Razor\Views\Teacher\WorkChecker.cshtml.g.cs

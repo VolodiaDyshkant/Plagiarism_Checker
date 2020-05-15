@@ -1,22 +1,19 @@
-﻿
+﻿@model Plagiarism_Checker.Models.Teacher.TeacherTasks
+
 @{
-    ViewData["Title"] = "ListTestWork";
-    Layout = "~/Views/Shared/_StudentLayout.cshtml";
+    Layout = "~/Views/Shared/_TeacherLayout.cshtml";
 }
 
-<h1>Вітаємо!</h1>
-
-
 <div class="largeDarkDiv" style="flex-direction:column;">
-    <h2>Cамостійні:</h2>
-    @foreach (var item in Model)
+    <h2>Домашні завдання:</h2>
+    @foreach (var item in Model.SolvedHometasks)
     {
         <div style="width:80%;height:180px;margin-bottom:20px;border:solid;border-width:1px">
             <div style="background-color:#d8d8d8">
                 <p style="color:#000000"> @item.NameOfDiscipline </p>
             </div>
             <p style="color:#d8d8d8; font-size:13px"> @item.TaskAssignment.Requirenments </p>
-            <p style="color:#555454; font-size:10px; justify-content:flex-end;"> @item.Lector - @item.Time </p>
+            <p style="color:#555454; font-size:10px; justify-content:flex-end;"> @item.Student - @item.Time </p>
             @if (item._Task.Percent > 10.0)
             {
                 <p style="color:#d64747; font-size:11px; justify-content:flex-end; font-weight:900">@item._Task.Percent.ToString()</p>
@@ -28,5 +25,5 @@
             <div style="clear:both;"></div>
         </div>
     }
-    <button onclick="location.href='@Url.Action("ListUnsolvedTests", "Student")'" class="button2">Список майбутніх робіт</button>
 </div>
+
