@@ -21,8 +21,8 @@
             <p style="color:#555454; font-size:10px; justify-content:flex-end;">@item.Lector - @item.Time</p>
 
             <div style="float:left;margin-top:8px">
-                <button style="width:85px" type="submit" class="button2" onclick="location.href='@Url.Action("AddSolutionPage", "Student", new { id = item._Task.Id })'" value="Переглянути" />
-                }
+                <button style="width:85px" type="submit" class="button2" onclick="location.href='@Url.Action("AddSolutionPage", "Student", new { id = item._Task.Id })'">Переглянути</button>
+                
             </div>
             <div style="clear:both;"></div>
         </div>
@@ -41,8 +41,8 @@
             <p style="color:#555454; font-size:10px; justify-content:flex-end;">@item.Lector - @item.Time</p>
 
             <div style="float:left;margin-top:8px">
-                <button style="width:85px" type="submit" class="button2" onclick="location.href='@Url.Action("AddSolutionPage", "Student", new { id = item._Task.Id })'" value="Виконати" />
-                }
+                <button style="width:85px" type="submit" class="button2" onclick="location.href='@Url.Action("AddSolutionPage", "Student", new { id = item._Task.Id })'">Виконати</button>
+                
             </div>
             <div style="clear:both;"></div>
         </div>

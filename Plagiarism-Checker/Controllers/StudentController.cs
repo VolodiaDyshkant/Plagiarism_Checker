@@ -51,6 +51,7 @@ namespace Plagiarism_Checker.Controllers
             _Group = group;
             subjects = _subjects;
             studentTasks = _studentTasks;
+            studentTasksUpdate(HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier));
         }
 
         [Authorize]
@@ -81,37 +82,44 @@ namespace Plagiarism_Checker.Controllers
 
         public IActionResult SolvedTask(SolutionToTask model)
         {
+            studentTasksUpdate(HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier));
             double countedPercent = 0;
             model.Percent = countedPercent;
             return View(model);
         }
         public IActionResult ListHomework()
         {
+            studentTasksUpdate(HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier));
             return View(studentTasks.SolvedHometasks);
         }
 
         public IActionResult ListUnsolvedHomework()
         {
+            studentTasksUpdate(HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier));
             var unsolvedHw = studentTasks.Hometasks.OrderBy(t => t.TaskAssignment.Deadline).ToList();
             return View(unsolvedHw);
         }
         public IActionResult ListSubjects()
         {
+            SubjectUpdate(HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier));
             return View(subjects);
         }
         public IActionResult ListTestWork()
         {
+            studentTasksUpdate(HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier));
             return View(studentTasks.SolvedTests);
         }
 
         public IActionResult ListUnsolvedTestWork()
         {
+            studentTasksUpdate(HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier));
             var unsolvedTs = studentTasks.Tests.OrderBy(t => t.TaskAssignment.Deadline).ToList();
             return View(unsolvedTs);
         }
         [HttpPost]
         public ActionResult AddSolutionPage(int id)
         {
+            studentTasksUpdate(HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier));
             bool taskType = false;
             SolutionToTask model;
             foreach (var test in studentTasks.Tests)
@@ -136,6 +144,7 @@ namespace Plagiarism_Checker.Controllers
         [HttpPost]
         public ActionResult AddSolutionFile(SolutionToTask model)
         {
+            studentTasksUpdate(HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier));
             if (ModelState.IsValid && model.PostedFile != null)
             {
                 var allowedExtensions = new string[] { "doc", "docx", "pdf", "txt" };
