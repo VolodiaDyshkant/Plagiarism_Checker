@@ -19,3 +19,4 @@ namespace Plagiarism_Checker.Models.Teacher
         public string Time { get; set; }
 
     }
+}

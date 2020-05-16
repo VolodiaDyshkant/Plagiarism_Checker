@@ -6,3 +6,8 @@
 
 <h1>WorkChecker</h1>
 
+<form asp-action="AddFile" asp-controller="Teacher" method="post" enctype="multipart/form-data">
+    <input type="file" name="firstFile" /><br>
+    <input type="file" name="secondFile" /><br>
+    <input type="submit" value="Check" />
+</form>
