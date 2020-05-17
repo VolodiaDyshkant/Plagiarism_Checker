@@ -12,7 +12,7 @@ using Plagiarism_Checker.Models;
 using Plagiarism_Checker.Models.Interfaces;
 using Plagiarism_Checker.Models.Student;
 using Plagiarism_Checker.Rpositories;
-
+using Plagiarism_Checker.Checker_Logic;
 namespace Plagiarism_Checker.Controllers
 {
     [Authorize(Roles = "Student")]
@@ -59,6 +59,7 @@ namespace Plagiarism_Checker.Controllers
 
         public IActionResult Index()
         {
+            //var k=Logic.check("Hello", "Hello");   //Приклад використання
             studentTasksUpdate(HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier));
             StudentTasks studentTasksPreview = new StudentTasks();
             for (int i = 0; i < 3; i++)
