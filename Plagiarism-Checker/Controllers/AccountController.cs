@@ -110,8 +110,12 @@ namespace Plagiarism_Checker.Controllers
                 }
                 if (_userManager.IsInRoleAsync(user, "Teacher").Result)
                 {
+<<<<<<< HEAD
                     return RedirectToAction("Index", "Teacher");
 
+=======
+                    return RedirectToAction("WorkChecker", "Teacher");
+>>>>>>> origin/TeacherPage
                 }
                 if (_userManager.IsInRoleAsync(user, "Student").Result)
                 {
