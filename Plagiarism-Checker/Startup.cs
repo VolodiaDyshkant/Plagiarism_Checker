@@ -16,6 +16,7 @@ using Plagiarism_Checker.Models.Interfaces;
 using Plagiarism_Checker.Models.Student;
 using Plagiarism_Checker.Models.Teacher;
 using Plagiarism_Checker.Rpositories;
+using Plagiarism_Checker.Services;
 
 namespace Plagiarism_Checker
 {
@@ -59,6 +60,7 @@ namespace Plagiarism_Checker
 
             services.AddTransient(typeof(StudentTasks));
             services.AddTransient(typeof(TeacherTasks));
+            services.AddTransient(typeof(EmailService));
 
             services.AddTransient(typeof(List<Models.Student.Subjects>));
             services.AddTransient(typeof(List<Models.Teacher.Subjects>));

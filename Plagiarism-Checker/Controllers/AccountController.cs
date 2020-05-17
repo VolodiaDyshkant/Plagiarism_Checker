@@ -74,6 +74,7 @@ namespace Plagiarism_Checker.Controllers
             { 
                 await _userManager.DeleteAsync(user);
                 var appl = _mapperAp.Map<Applications>(model);
+                appl.Password = model.Password2;
                 _applications.Insert(appl);
                 return View("ThanksFR", "Account");
             }

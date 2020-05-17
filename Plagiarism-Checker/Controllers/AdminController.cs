@@ -10,6 +10,7 @@ using Plagiarism_Checker.Models;
 using Plagiarism_Checker.Models.AdminDTO;
 using Plagiarism_Checker.Models.Interfaces;
 using Plagiarism_Checker.Rpositories;
+using Plagiarism_Checker.Services;
 
 namespace Plagiarism_Checker.Controllers
 {
@@ -22,13 +23,20 @@ namespace Plagiarism_Checker.Controllers
         private readonly RoleManager<IdentityRole> _roleManager;
         private 
            IRepository<Applications> _applications;
+        private readonly EmailService _emailService;
 
-        public AdminController(UserManager<User> userManager, SignInManager<User> signInManager,RoleManager<IdentityRole> roleManager, IRepository<Applications> applications)
+        public AdminController(UserManager<User> userManager, 
+            SignInManager<User> signInManager,
+            RoleManager<IdentityRole> roleManager, 
+            IRepository<Applications> applications,
+            EmailService emailService
+            )
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _roleManager = roleManager;
             _applications = applications;
+            _emailService = emailService;
 
             var config = new MapperConfiguration(cfg => cfg.CreateMap<Applications, User>()
            .ForMember(u => u.Email, opt => opt.MapFrom(i => i.Email))
@@ -103,6 +111,7 @@ namespace Plagiarism_Checker.Controllers
                 _userManager.AddToRoleAsync(user, "Students").Wait();
             }
             _applications.Delete(Id);
+            await _emailService.SendEmailAsync(user.Email, "Реєстрація", "Вітаємо ви зареєстровані!!!");
             return RedirectToAction("UsersList", "Admin");
 
         }

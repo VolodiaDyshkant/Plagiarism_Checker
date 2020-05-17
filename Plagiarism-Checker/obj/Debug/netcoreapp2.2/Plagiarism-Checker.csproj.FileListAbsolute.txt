@@ -281,3 +281,6 @@ C:\MyProjects\Plagiarism_Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Plag
 C:\MyProjects\Plagiarism_Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Plagiarism-Checker.Views.pdb
 C:\MyProjects\Plagiarism_Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Plagiarism-Checker.csproj.CopyComplete
 >>>>>>> origin/TeacherPage
+C:\MyProjects\Plagiarism_Checker\Plagiarism-Checker\bin\Debug\netcoreapp2.2\Connected Services\Application Insights\ConnectedService.json
+C:\MyProjects\Plagiarism_Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Razor\Views\Teacher\AddTask.cshtml.g.cs
+C:\MyProjects\Plagiarism_Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Razor\Views\Teacher\ListTests.cshtml.g.cs
