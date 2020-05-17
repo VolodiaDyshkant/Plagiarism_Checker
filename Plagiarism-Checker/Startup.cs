@@ -94,7 +94,10 @@ namespace Plagiarism_Checker
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env,UserManager<User> userManager,RoleManager<IdentityRole> roleManager)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env,UserManager<User> userManager,RoleManager<IdentityRole> roleManager, IRepository<StudentLesson> student_Lesson, IRepository<Lesson> lesson,
+            IRepository<Models.Task> task, IRepository<Assignment> assignment,
+            IRepository<Schedule> schedule, IRepository<Discipline> discipline,
+            IRepository<Time> time, IRepository<Day> day, IRepository<Group> group)
         {
             if (env.IsDevelopment())
             {
@@ -111,7 +114,7 @@ namespace Plagiarism_Checker
             app.UseStaticFiles();
             app.UseCookiePolicy();
             app.UseAuthentication();
-            DataInitializer.SeedData(userManager, roleManager);
+            DataInitializer.SeedData(userManager, roleManager, student_Lesson, lesson, task,assignment,schedule,discipline,time,day,group);
 
             //app.UseAuthorization();
             //app.UseIdentity();

@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Plagiarism_Checker.Models;
+using Plagiarism_Checker.Models.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,11 +11,18 @@ namespace Plagiarism_Checker
 {
     public class DataInitializer
     {
-        public static void SeedData(UserManager<User> userManager, RoleManager<IdentityRole> roleManager)
+        
+        
+
+        public static void SeedData(UserManager<User> userManager, RoleManager<IdentityRole> roleManager, 
+            IRepository<StudentLesson> student_Lesson, IRepository<Lesson> lesson, 
+            IRepository<Models.Task> task, IRepository<Assignment> assignment,
+            IRepository<Schedule> schedule, IRepository<Discipline> discipline, 
+            IRepository<Time> time, IRepository<Day> day, IRepository<Group> group)
         {
             SeedRoles(roleManager);
             SeedUsers(userManager);
-            //SeedGroups();
+            SeedGroups(group);
             //SeedDDiscipline();
             //SeedTimes();
             //SeedDays();
@@ -150,20 +158,26 @@ namespace Plagiarism_Checker
 
         }
 
-        public static void SeedGroups()
+        public static void SeedGroups(IRepository<Group> group)
         {
-            using (UniverContext uc = new UniverContext())
-            {
-                if (uc.Group.FirstOrDefault(g => g.Name == "PMP-32") == null)
-                {
-                    var id1 = uc.User.FirstOrDefault(u => u.UserName == "Aslan").Id;
-                    var id2 = uc.User.FirstOrDefault(u => u.UserName == "Mahmud").Id;
-                    var id3 = uc.User.FirstOrDefault(u => u.UserName == "Aramat").Id;
-                    Group[] groups = { new Group { Name = "PMP-32", StudentId = id1 }, new Group { Name = "PMP-32", StudentId = id2 }, new Group { Name = "PMP-32", StudentId = id3 } };
-                    uc.Group.AddRange(groups);
-                    uc.SaveChanges();
-                }
-            }
+            var id1 = "5f361bec-fc51-4b5b-8059-94c19ae8bd80";
+            var id2 = "5b6377fe-da9c-409d-9d8b-22f182c464ea";
+            var id3 = "54ce0186-703e-4716-a770-0b8a24b79820";
+            group.Insert(new Group { Name = "PMP-32", StudentId = id1 });
+            group.Insert(new Group { Name = "PMP-32", StudentId = id2 });
+            group.Insert(new Group { Name = "PMP-32", StudentId = id3 });
+            //using (UniverContext uc = new UniverContext())
+            //{
+            //    //if (uc.Group.FirstOrDefault(g => g.Name == "PMP-32") == null)
+            //    //{
+            //        var id1 = uc.User.FirstOrDefault(u => u.UserName == "Aslan").Id;
+            //        var id2 = uc.User.FirstOrDefault(u => u.UserName == "Mahmud").Id;
+            //        var id3 = uc.User.FirstOrDefault(u => u.UserName == "Aramat").Id;
+            //        Group[] groups = { new Group { Name = "PMP-32", StudentId = id1 }, new Group { Name = "PMP-32", StudentId = id2 }, new Group { Name = "PMP-32", StudentId = id3 } };
+            //        uc.Group.AddRange(groups);
+            //        uc.SaveChanges();
+            //    //}
+            //}
 
         }
 
@@ -272,8 +286,8 @@ namespace Plagiarism_Checker
         {
             using (UniverContext uc = new UniverContext())
             {
-                if (uc.Schedule.FirstOrDefault() == null)
-                {
+                //if (uc.Schedule.FirstOrDefault() == null)
+                //{
 
                     var id1 = uc.User.FirstOrDefault(u => u.UserName == "Ashot").Id;
                     var id2 = uc.User.FirstOrDefault(u => u.UserName == "Tamara").Id;
@@ -292,7 +306,7 @@ namespace Plagiarism_Checker
                     Schedule schedule12 = new Schedule { TeacherId = id3, GroupId = 1, DisciplineId = 4, DayId = 4, TimeId = 1 };
                     uc.Schedule.AddRange(new List<Schedule> { schedule1, schedule2, schedule3, schedule4, schedule5, schedule6, schedule7, schedule8, schedule9, schedule10, schedule11, schedule12, });
                     uc.SaveChanges();
-                }
+                //}
             }
         }
 
