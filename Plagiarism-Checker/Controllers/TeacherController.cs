@@ -84,7 +84,7 @@ namespace Plagiarism_Checker.Controllers
         public IActionResult AddTask()
         {
             SubjectUpdate(HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier));
-            TaskAdd newtask= new TaskAdd(subjects);
+            TaskAdd newtask = new TaskAdd(subjects);
             return View(newtask);
         }
 
@@ -103,7 +103,7 @@ namespace Plagiarism_Checker.Controllers
                 _Task.Insert(ad_tast);
                 if (task.taskAdd.IsTest == true)
                 {
-                   var l = _Lesson.GetById(task.taskAdd.Lesson);
+                    var l = _Lesson.GetById(task.taskAdd.Lesson);
                     l.TestTaskId = _Task.GetAll().OrderBy(a => a.Id).LastOrDefault().Id;
                     _Lesson.Update(l);
                 }
@@ -154,10 +154,10 @@ namespace Plagiarism_Checker.Controllers
             {
                 string NameDiscipline = _Discipline.GetById(item.DisciplineId).Name;
                 var Group = _Group.GetById(item.GroupId).Name;
-                var lesson = _Lesson.GetAll().Where(l=>l.ScheduleId==item.Id).FirstOrDefault();
+                var lesson = _Lesson.GetAll().Where(l => l.ScheduleId == item.Id).FirstOrDefault();
                 var assign = _Assignment.GetById(_Task.GetById(lesson.TestTaskId).AssignmentId);
                 string Time = _Day.GetById(item.DayId).Day1 + " " + _Time.GetById(item.TimeId).Time1.ToString();
-                teacherTasks.Tests.Add(new _FullTask(new __Assignment(assign.Id,assign.Deadline,assign.Requirenments),NameDiscipline,Group,Time));
+                teacherTasks.Tests.Add(new _FullTask(new __Assignment(assign.Id, assign.Deadline, assign.Requirenments), NameDiscipline, Group, Time));
                 //var Student = _userManager.FindByIdAsync(_Group.GetById(item.GroupId).StudentId);
                 //string LectorName = r.Replace(Student.UserName, " ");
             }
