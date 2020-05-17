@@ -14,6 +14,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Plagiarism_Checker.Models;
 using Plagiarism_Checker.Models.Interfaces;
 using Plagiarism_Checker.Models.Student;
+using Plagiarism_Checker.Models.Teacher;
 using Plagiarism_Checker.Rpositories;
 
 namespace Plagiarism_Checker
@@ -57,7 +58,10 @@ namespace Plagiarism_Checker
             services.AddSingleton(typeof(IRepository<>), typeof(Repository<>));
 
             services.AddTransient(typeof(StudentTasks));
-            services.AddTransient(typeof(List<Subjects>));
+            services.AddTransient(typeof(TeacherTasks));
+
+            services.AddTransient(typeof(List<Models.Student.Subjects>));
+            services.AddTransient(typeof(List<Models.Teacher.Subjects>));
 
 
 

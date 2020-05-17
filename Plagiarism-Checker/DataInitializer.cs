@@ -10,16 +10,16 @@ namespace Plagiarism_Checker
 {
     public class DataInitializer
     {
-        public static void SeedData(UserManager<User> userManager,RoleManager<IdentityRole> roleManager)
+        public static void SeedData(UserManager<User> userManager, RoleManager<IdentityRole> roleManager)
         {
             SeedRoles(roleManager);
             SeedUsers(userManager);
-            SeedGroups();
-            SeedDDiscipline();
-            SeedTimes();
-            SeedDays();
-            SeedSchedule();
-            SeedAssignment();
+            //SeedGroups();
+            //SeedDDiscipline();
+            //SeedTimes();
+            //SeedDays();
+            //SeedSchedule();
+            //SeedAssignment();
 
         }
 
@@ -60,7 +60,7 @@ namespace Plagiarism_Checker
 
                 if (result.Succeeded)
                 {
-                    userManager.AddToRoleAsync(user,"Admin").Wait();
+                    userManager.AddToRoleAsync(user, "Admin").Wait();
                 }
             }
 
@@ -154,7 +154,7 @@ namespace Plagiarism_Checker
         {
             using (UniverContext uc = new UniverContext())
             {
-                if (uc.Group.FirstOrDefault(g=>g.Name=="PMP-32") == null)
+                if (uc.Group.FirstOrDefault(g => g.Name == "PMP-32") == null)
                 {
                     var id1 = uc.User.FirstOrDefault(u => u.UserName == "Aslan").Id;
                     var id2 = uc.User.FirstOrDefault(u => u.UserName == "Mahmud").Id;
@@ -171,9 +171,9 @@ namespace Plagiarism_Checker
         {
             using (UniverContext uc = new UniverContext())
             {
-                if (uc.Discipline.FirstOrDefault(d=>d.Name == ".net") == null)
+                if (uc.Discipline.FirstOrDefault(d => d.Name == ".net") == null)
                 {
-                    uc.Discipline.Add(new Discipline { Name=".net" });
+                    uc.Discipline.Add(new Discipline { Name = ".net" });
                     uc.SaveChanges();
                 }
 
@@ -214,7 +214,7 @@ namespace Plagiarism_Checker
                     uc.Time.AddRange(new List<Time> { time1, time2, time3, time4, time5, time6, time7 });
                     uc.SaveChanges();
                 }
-                
+
             }
 
         }
@@ -272,66 +272,65 @@ namespace Plagiarism_Checker
         {
             using (UniverContext uc = new UniverContext())
             {
-                if (uc.Schedule.FirstOrDefault()==null)
+                if (uc.Schedule.FirstOrDefault() == null)
                 {
-                    
-                    if (uc.Schedule.FirstOrDefault() == null)
-                    {
-                        var id1 = uc.User.FirstOrDefault(u => u.UserName == "Ashot").Id;
-                        var id2 = uc.User.FirstOrDefault(u => u.UserName == "Tamara").Id;
-                        var id3 = uc.User.FirstOrDefault(u => u.UserName == "Mustafa").Id;
-                        Schedule schedule1 = new Schedule { TeacherId = id1, GroupId = 1, DisciplineId = 1, DayId = 1, TimeId = 1 };
-                        Schedule schedule2 = new Schedule { TeacherId = id1, GroupId = 1, DisciplineId = 1, DayId = 3, TimeId = 4 };
-                        Schedule schedule3 = new Schedule { TeacherId = id1, GroupId = 1, DisciplineId = 1, DayId = 5, TimeId = 2 };
-                        Schedule schedule4 = new Schedule { TeacherId = id1, GroupId = 1, DisciplineId = 1, DayId = 3, TimeId = 4 };
-                        Schedule schedule5 = new Schedule { TeacherId = id2, GroupId = 1, DisciplineId = 2, DayId = 2, TimeId = 3 };
-                        Schedule schedule6 = new Schedule { TeacherId = id2, GroupId = 1, DisciplineId = 2, DayId = 3, TimeId = 7 };
-                        Schedule schedule7 = new Schedule { TeacherId = id2, GroupId = 1, DisciplineId = 3, DayId = 4, TimeId = 5 };
-                        Schedule schedule8 = new Schedule { TeacherId = id2, GroupId = 1, DisciplineId = 3, DayId = 6, TimeId = 6 };
-                        Schedule schedule9 = new Schedule { TeacherId = id3, GroupId = 1, DisciplineId = 4, DayId = 1, TimeId = 3 };
-                        Schedule schedule10 = new Schedule { TeacherId = id3, GroupId = 1, DisciplineId = 4, DayId = 2, TimeId = 5 };
-                        Schedule schedule11 = new Schedule { TeacherId = id3, GroupId = 1, DisciplineId = 4, DayId = 3, TimeId = 6 };
-                        Schedule schedule12 = new Schedule { TeacherId = id3, GroupId = 1, DisciplineId = 4, DayId = 4, TimeId = 1 };
-                        uc.Schedule.AddRange(new List<Schedule> { schedule1, schedule2, schedule3, schedule4, schedule5, schedule6, schedule7, schedule8, schedule9, schedule10, schedule11, schedule12, });
-                        uc.SaveChanges();
-                    }
+
+                    var id1 = uc.User.FirstOrDefault(u => u.UserName == "Ashot").Id;
+                    var id2 = uc.User.FirstOrDefault(u => u.UserName == "Tamara").Id;
+                    var id3 = uc.User.FirstOrDefault(u => u.UserName == "Mustafa").Id;
+                    Schedule schedule1 = new Schedule { TeacherId = id1, GroupId = 1, DisciplineId = 1, DayId = 1, TimeId = 1 };
+                    Schedule schedule2 = new Schedule { TeacherId = id1, GroupId = 1, DisciplineId = 1, DayId = 3, TimeId = 4 };
+                    Schedule schedule3 = new Schedule { TeacherId = id1, GroupId = 1, DisciplineId = 1, DayId = 5, TimeId = 2 };
+                    Schedule schedule4 = new Schedule { TeacherId = id1, GroupId = 1, DisciplineId = 1, DayId = 3, TimeId = 4 };
+                    Schedule schedule5 = new Schedule { TeacherId = id2, GroupId = 1, DisciplineId = 2, DayId = 2, TimeId = 3 };
+                    Schedule schedule6 = new Schedule { TeacherId = id2, GroupId = 1, DisciplineId = 2, DayId = 3, TimeId = 7 };
+                    Schedule schedule7 = new Schedule { TeacherId = id2, GroupId = 1, DisciplineId = 3, DayId = 4, TimeId = 5 };
+                    Schedule schedule8 = new Schedule { TeacherId = id2, GroupId = 1, DisciplineId = 3, DayId = 6, TimeId = 6 };
+                    Schedule schedule9 = new Schedule { TeacherId = id3, GroupId = 1, DisciplineId = 4, DayId = 1, TimeId = 3 };
+                    Schedule schedule10 = new Schedule { TeacherId = id3, GroupId = 1, DisciplineId = 4, DayId = 2, TimeId = 5 };
+                    Schedule schedule11 = new Schedule { TeacherId = id3, GroupId = 1, DisciplineId = 4, DayId = 3, TimeId = 6 };
+                    Schedule schedule12 = new Schedule { TeacherId = id3, GroupId = 1, DisciplineId = 4, DayId = 4, TimeId = 1 };
+                    uc.Schedule.AddRange(new List<Schedule> { schedule1, schedule2, schedule3, schedule4, schedule5, schedule6, schedule7, schedule8, schedule9, schedule10, schedule11, schedule12, });
+                    uc.SaveChanges();
                 }
             }
-
         }
+
+
 
         public static void SeedAssignment()
         {
             using (UniverContext uc = new UniverContext())
             {
-                if (uc.Assignment.FirstOrDefault() == null)
-                {
-                    DateTime dt1 = new DateTime(2020, 05, 25);
-                    Assignment assignment1 = new Assignment { Deadline = dt1, Requirenments = "test1" };
-                    DateTime dt2 = new DateTime(2020, 05, 26);
-                    Assignment assignment2 = new Assignment { Deadline = dt2, Requirenments = "test2" };
-                    DateTime dt3 = new DateTime(2020, 05, 27);
-                    Assignment assignment3 = new Assignment { Deadline = dt3, Requirenments = "test3" };
-                    DateTime dt4 = new DateTime(2020, 05, 28);
-                    Assignment assignment4 = new Assignment { Deadline = dt4, Requirenments = "test4" };
-                    DateTime dt5 = new DateTime(2020, 05, 29);
-                    Assignment assignment5 = new Assignment { Deadline = dt5, Requirenments = "test5" };
-                    DateTime dt6 = new DateTime(2020, 05, 30);
-                    Assignment assignment6 = new Assignment { Deadline = dt6, Requirenments = "homework1" };
-                    DateTime dt7 = new DateTime(2020, 05, 31);
-                    Assignment assignment7 = new Assignment { Deadline = dt7, Requirenments = "homework2" };
-                    DateTime dt8 = new DateTime(2020, 06, 01);
-                    Assignment assignment8 = new Assignment { Deadline = dt8, Requirenments = "homework3" };
-                    DateTime dt9 = new DateTime(2020, 06, 02);
-                    Assignment assignment9 = new Assignment { Deadline = dt9, Requirenments = "homework4" };
-                    DateTime dt10 = new DateTime(2020, 06, 03);
-                    Assignment assignment10 = new Assignment { Deadline = dt10, Requirenments = "homework5" };
-                    uc.Assignment.AddRange(new List<Assignment> {assignment1, assignment2, assignment3, assignment4, assignment5, assignment6, assignment7, assignment8, assignment9, assignment10, });
-                    uc.SaveChanges();
-                }
-
+                //if (uc.Assignment.FirstOrDefault() == null)
+                //{
+                DateTime dt1 = new DateTime(2020, 05, 25);
+                Assignment assignment1 = new Assignment { Deadline = dt1, Requirenments = "test1" };
+                DateTime dt2 = new DateTime(2020, 05, 26);
+                Assignment assignment2 = new Assignment { Deadline = dt2, Requirenments = "test2" };
+                DateTime dt3 = new DateTime(2020, 05, 27);
+                Assignment assignment3 = new Assignment { Deadline = dt3, Requirenments = "test3" };
+                DateTime dt4 = new DateTime(2020, 05, 28);
+                Assignment assignment4 = new Assignment { Deadline = dt4, Requirenments = "test4" };
+                DateTime dt5 = new DateTime(2020, 05, 29);
+                Assignment assignment5 = new Assignment { Deadline = dt5, Requirenments = "test5" };
+                DateTime dt6 = new DateTime(2020, 05, 30);
+                Assignment assignment6 = new Assignment { Deadline = dt6, Requirenments = "homework1" };
+                DateTime dt7 = new DateTime(2020, 05, 31);
+                Assignment assignment7 = new Assignment { Deadline = dt7, Requirenments = "homework2" };
+                DateTime dt8 = new DateTime(2020, 06, 01);
+                Assignment assignment8 = new Assignment { Deadline = dt8, Requirenments = "homework3" };
+                DateTime dt9 = new DateTime(2020, 06, 02);
+                Assignment assignment9 = new Assignment { Deadline = dt9, Requirenments = "homework4" };
+                DateTime dt10 = new DateTime(2020, 06, 03);
+                Assignment assignment10 = new Assignment { Deadline = dt10, Requirenments = "homework5" };
+                uc.Assignment.AddRange(new List<Assignment> { assignment1, assignment2, assignment3, assignment4, assignment5, assignment6, assignment7, assignment8, assignment9, assignment10, });
+                uc.SaveChanges();
+                //}
             }
+
 
         }
     }
+
 }

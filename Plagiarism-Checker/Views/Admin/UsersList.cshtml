@@ -2,11 +2,14 @@
 @{
     ViewData["Title"] = "UsersList";
 }
+<hr />
 
 <h2>Непідтверджені користувачі:</h2>
 <table class="table-dark">
     <tr>
-        <th> Ім'я Користувача</th>
+        <th> Ім'я Користувача   </th>
+        <th> Емейл  </th>
+        <th> Код    </th>
         <th>        </th>
         <th>        </th>
     </tr>
@@ -15,46 +18,61 @@
     {
         <tr>
             <td>@item.name</td>
+            <td>@item.Email</td>
+            <td>@item.Number</td>
             <td> @Html.ActionLink("Видалити", "DeleteApplication", new { Id = item.id })</td>
             <td> @Html.ActionLink("Підтвердити", "ApproveApplication", new { Id = item.id })</td>
         </tr>
     }
 </table>
 
-@foreach (var i in Model.unregisteredUsers)
-{
-    <h4 style="float:left">@i.name</h4>
-    <div style="margin-left:auto; margin-right:0">
-        <button>Delete</button>
-        <button>Approve</button>/
-    </div>
-    <div style="clear:both;"></div>
-    <hr />
-}
 
 
-<form method="post" asp-controller="Admin" asp-action="DeleteUser">
-    <h2>Teachers:</h2>
+
+<hr />
+<hr />
+<hr />
+<br />
+<br />
+
+<h2>Teachers:</h2>
+<hr />
+<div style="display:flex; flex-wrap: wrap;">
     @foreach (var i in Model.allTeachers)
-    {
-        <h4 style="float:left">@i.name</h4>
-        <input type="hidden" value="@i.id" />
-        <div style="margin-left:auto; margin-right:0">
-            <input type="submit" value="Delete" />
+    {<div style="display: grid;">
+            <h4 >@i.name</h4>
+            <a class="button2" style="justify-content: center;
+    border: none;
+    color: whitesmoke;
+    background: #777373;
+    margin: 0.3em;
+    border-radius: inherit;" href="@Url.Action("DeleteUser","Admin", new { id = i.id })" onclick="return confirm('are you sure?');">Видалити</a>
+            <div style="clear:both;"></div>
         </div>
-        <div style="clear:both;"></div>
-        <hr />
     }
-    <h2>Students:</h2>
+</div>
+<br />
+
+<hr />
+<hr />
+<hr />
+<br />
+<br />
+
+<h2>Students:</h2>
+<hr />
+<div style="display:flex;  flex-wrap: wrap;">
     @foreach (var i in Model.allStudents)
     {
-        <h4 style="float:left">@i.name</h4>
-        <input type="hidden" value="@i.id" />
-        <div style="margin-left:auto; margin-right:0">
-            <input type="submit" value="Delete" />
+        <div style="display: grid;">
+            <h4>@i.name</h4>
+            <a class="button2" style="justify-content: center;
+    border: none;
+    color: whitesmoke;
+    background: #777373;
+    margin: 0.3em;
+    border-radius: inherit;" href="@Url.Action("DeleteUser","Admin", new { id = i.id })" onclick="return confirm('are you sure?');">Видалити</a>
+            <div style="clear:both;"></div>
         </div>
-        <div style="clear:both;"></div>
-        <hr />
     }
-
-</form>
+</div>

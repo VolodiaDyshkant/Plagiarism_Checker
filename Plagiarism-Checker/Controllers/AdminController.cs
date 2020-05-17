@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Plagiarism_Checker.Models;
 using Plagiarism_Checker.Models.AdminDTO;
+using Plagiarism_Checker.Models.Interfaces;
 using Plagiarism_Checker.Rpositories;
 
 namespace Plagiarism_Checker.Controllers
@@ -15,23 +16,35 @@ namespace Plagiarism_Checker.Controllers
     [Authorize(Roles = "Admin")]
     public class AdminController : Controller
     {
+        private readonly IMapper _mapper;
         private readonly UserManager<User> _userManager;
         private readonly SignInManager<User> _signInManager;
         private readonly RoleManager<IdentityRole> _roleManager;
+        private 
+           IRepository<Applications> _applications;
 
-        public AdminController(UserManager<User> userManager, SignInManager<User> signInManager,RoleManager<IdentityRole> roleManager)
+        public AdminController(UserManager<User> userManager, SignInManager<User> signInManager,RoleManager<IdentityRole> roleManager, IRepository<Applications> applications)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _roleManager = roleManager;
+            _applications = applications;
+
+            var config = new MapperConfiguration(cfg => cfg.CreateMap<Applications, User>()
+           .ForMember(u => u.Email, opt => opt.MapFrom(i => i.Email))
+           .ForMember(u => u.UserName, opt => opt.MapFrom(i => i.Name + i.Surname))
+           .ForMember(u => u.StudentNumber, opt => opt.MapFrom(i => i.StudentNumber))
+           .ForMember(u => u.Nin, opt => opt.MapFrom(i => i.Nin)));
+
+            _mapper = new Mapper(config);
         }
-        
+
         public IActionResult UsersList()
         {
             AllUsers users = new AllUsers();
             List<User> teachers = _userManager.GetUsersInRoleAsync("Teacher").Result.ToList();
             List<User> students = _userManager.GetUsersInRoleAsync("Student").Result.ToList();
-            List<User> allUsers = new List<User>();
+            List<Applications> allUsers = _applications.GetAll().ToList();
             
             foreach (var u in teachers)
             {
@@ -44,13 +57,24 @@ namespace Plagiarism_Checker.Controllers
             
             foreach (var item in allUsers)
             {
-                    users.unregisteredUsers.Add(new _User(item.Id, item.UserName));
+                string num;
+                if (!item.IsTeacher) 
+                {
+                    num = item.StudentNumber;
+
+                }
+                else
+                {
+                    num = item.Nin;
+
+                }
+                users.unregisteredUsers.Add(new _applUser(item.Id, item.Name +" "+ item.Surname, item.Email,num));
                 
             }
            
             return View(users);
         }
-
+       
         public async Task<IActionResult> DeleteUser(string id)
         {
             var user = await _userManager.FindByIdAsync(id);
@@ -59,19 +83,28 @@ namespace Plagiarism_Checker.Controllers
             return RedirectToAction("UsersList", "Admin");
         }
 
-        public async Task<IActionResult> DeleteApplication(string id)
+        public async Task<IActionResult> DeleteApplication(int Id)
         {
-            var user = await _userManager.FindByIdAsync(id);
-            _userManager.DeleteAsync(user).Wait();
-
+            _applications.Delete(Id);
             return RedirectToAction("UsersList", "Admin");
         }
-        public async Task<IActionResult> ApproveApplication(string id)
+        public async Task<IActionResult> ApproveApplication(int Id)
         {
-
-            //var user = _mapper.Map<User>(model);
-            //var result = await _userManager.CreateAsync(user, model.Password2);
+            var appl = _applications.GetById(Id);
+            var user = _mapper.Map<User>(appl);
+            var result = await _userManager.CreateAsync(user, appl.Password);
+            await _signInManager.PasswordSignInAsync(appl.Email, appl.Password, false, false);
+            if(appl.IsTeacher)
+            {
+                _userManager.AddToRoleAsync(user, "Teacher").Wait();
+            }
+            else
+            {
+                _userManager.AddToRoleAsync(user, "Students").Wait();
+            }
+            _applications.Delete(Id);
             return RedirectToAction("UsersList", "Admin");
+
         }
     }
 }

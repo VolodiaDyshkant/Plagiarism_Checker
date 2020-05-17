@@ -6,18 +6,15 @@ using System.Security.Claims;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
-<<<<<<< HEAD
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Plagiarism_Checker.Models;
 using Plagiarism_Checker.Models.Interfaces;
 using Plagiarism_Checker.Models.Teacher;
-=======
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
 using Plagiarism_Checker.Extensions;
 using Plagiarism_Checker.Models.Student;
->>>>>>> origin/TeacherPage
+using Plagiarism_Checker.Checker_Logic;
 
 namespace Plagiarism_Checker.Controllers
 {
@@ -37,14 +34,14 @@ namespace Plagiarism_Checker.Controllers
         public IRepository<Time> _Time;
         public IRepository<Day> _Day;
         public IRepository<Models.Group> _Group;
-        public List<Subjects> subjects;
+        public List<Models.Teacher.Subjects> subjects;
         public TeacherTasks teacherTasks = new TeacherTasks();
 
 
         public TeacherController(UserManager<User> userManager, TeacherTasks teacherTasks,
             IRepository<StudentLesson> student_Lesson, IRepository<Lesson> lesson, IRepository<Models.Task> task,
             IRepository<Assignment> assignment, IRepository<Solution> solution, IRepository<Schedule> schedule,
-            IRepository<Discipline> discipline, IRepository<Time> time, IRepository<Day> day, List<Subjects> _subjects, IRepository<Models.Group> group)
+            IRepository<Discipline> discipline, IRepository<Time> time, IRepository<Day> day, List<Models.Teacher.Subjects> _subjects, IRepository<Models.Group> group)
         {
             _userManager = userManager;
             _Student_Lesson = student_Lesson;
@@ -64,14 +61,14 @@ namespace Plagiarism_Checker.Controllers
         [Authorize]
         public IActionResult Index()
         {
-            return View(new StudentTasks());
+            teacherTasksUpdate(HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier));
+            return View(teacherTasks);
         }
 
         public IActionResult WorkChecker()
         {
             return View();
         }
-<<<<<<< HEAD
         public IActionResult ListSubjects()
         {
             SubjectUpdate(HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier));
@@ -149,7 +146,7 @@ namespace Plagiarism_Checker.Controllers
                 var Group = _Group.GetById(item.GroupId).Name;
                 string Time = _Day.GetById(item.DayId).Day1 + " " + _Time.GetById(item.TimeId).Time1.ToString();
                 var lesson = _Lesson.GetAll().Where(l => l.ScheduleId == item.Id).FirstOrDefault();
-                subjects.Add(new Subjects(NameDiscipline, Group, Time, item.GroupId, lesson.Id));
+                subjects.Add(new Models.Teacher.Subjects(NameDiscipline, Group, Time, item.GroupId, lesson.Id));
             }
         }
 
@@ -171,14 +168,14 @@ namespace Plagiarism_Checker.Controllers
                 var lesson = _Lesson.GetAll().Where(l => l.ScheduleId == item.Id).FirstOrDefault();
                 var assign = _Assignment.GetById(_Task.GetById(lesson.TestTaskId).AssignmentId);
                 string Time = _Day.GetById(item.DayId).Day1 + " " + _Time.GetById(item.TimeId).Time1.ToString();
-                teacherTasks.Tests.Add(new _FullTask(new __Assignment(assign.Id, assign.Deadline, assign.Requirenments), NameDiscipline, Group, Time));
+
+                teacherTasks.Tests.Add(new Models.Teacher._FullTask(new Models.Teacher.__Assignment(assign.Id, assign.Deadline, assign.Requirenments), NameDiscipline, Group, Time));
                 //var Student = _userManager.FindByIdAsync(_Group.GetById(item.GroupId).StudentId);
                 //string LectorName = r.Replace(Student.UserName, " ");
             }
 
         }
 
-=======
 
         [HttpPost]
         public async Task<IActionResult> AddFile(IFormFile firstFile, IFormFile secondFile)
@@ -187,10 +184,11 @@ namespace Plagiarism_Checker.Controllers
             {
                 var firstContent = await firstFile.ReadAsStringAsync();
                 var secondContent = await secondFile.ReadAsStringAsync();
+                var ans= Logic.check(firstContent, secondContent);
             }
 
             return RedirectToAction("WorkChecker", "Teacher");
         }
->>>>>>> origin/TeacherPage
+
     }
 }

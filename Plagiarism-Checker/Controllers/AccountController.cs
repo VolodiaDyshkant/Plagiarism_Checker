@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Plagiarism_Checker.Models;
 using Plagiarism_Checker.Models.AccountDTO;
+using Plagiarism_Checker.Models.Interfaces;
 using Plagiarism_Checker.Models.Student;
 using Plagiarism_Checker.Rpositories;
 
@@ -20,26 +21,29 @@ namespace Plagiarism_Checker.Controllers
     public class AccountController : Controller
     {
         private readonly IMapper _mapper;
+        private readonly IMapper _mapperAp;
+
         private readonly RoleManager<IdentityRole> _roleManager;
         private readonly UserManager<User> _userManager;
         private readonly SignInManager<User> _signInManager;
+        private readonly IRepository<Applications> _applications;
 
 
         //private readonly UserRepository<User> db;
 
-        public AccountController(UserManager<User> userManager, SignInManager<User> signInManager, RoleManager<IdentityRole> roleManager)
+        public AccountController(UserManager<User> userManager, SignInManager<User> signInManager, RoleManager<IdentityRole> roleManager, IRepository<Applications> applications)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _roleManager = roleManager;
+            _applications = applications;
             var config = new MapperConfiguration(cfg => cfg.CreateMap<Registration, User>()
             .ForMember(u => u.Email, opt => opt.MapFrom(i => i.Email))
             .ForMember(u => u.UserName, opt => opt.MapFrom(i => i.Name+i.Surname))
             .ForMember(u => u.StudentNumber, opt => opt.MapFrom(i => i.student_number))
             .ForMember(u => u.Nin, opt => opt.MapFrom(i => i.nin)));
-
             _mapper = new Mapper(config);
-
+            _mapperAp = new Mapper(new MapperConfiguration(cfg => cfg.CreateMap<Registration, Applications>()));
         }
 
         public IActionResult ThanksFR()
@@ -66,17 +70,12 @@ namespace Plagiarism_Checker.Controllers
                 }
                 return View(model);
             }
-            if(model.isTeacher)
-            {
-                _userManager.AddToRoleAsync(user, "Teacher").Wait();
-                return View("ThanksFR", "Account");
-
-            }
             else
-            {
-                _userManager.AddToRoleAsync(user, "Student").Wait();
+            { 
+                await _userManager.DeleteAsync(user);
+                var appl = _mapperAp.Map<Applications>(model);
+                _applications.Insert(appl);
                 return View("ThanksFR", "Account");
-
             }
 
         }
@@ -110,12 +109,9 @@ namespace Plagiarism_Checker.Controllers
                 }
                 if (_userManager.IsInRoleAsync(user, "Teacher").Result)
                 {
-<<<<<<< HEAD
                     return RedirectToAction("Index", "Teacher");
 
-=======
-                    return RedirectToAction("WorkChecker", "Teacher");
->>>>>>> origin/TeacherPage
+                    //return RedirectToAction("WorkChecker", "Teacher");
                 }
                 if (_userManager.IsInRoleAsync(user, "Student").Result)
                 {
