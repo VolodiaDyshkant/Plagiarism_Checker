@@ -9,6 +9,7 @@ namespace Plagiarism_Checker.Models.AdminDTO
     {
         public List<_User> allTeachers= new List<_User>();
         public List<_User> allStudents = new List<_User>();
+        public List<_User> unregisteredUsers = new List<_User>();
     }
     public class _User
     {

@@ -31,14 +31,23 @@ namespace Plagiarism_Checker.Controllers
             AllUsers users = new AllUsers();
             List<User> teachers = _userManager.GetUsersInRoleAsync("Teacher").Result.ToList();
             List<User> students = _userManager.GetUsersInRoleAsync("Student").Result.ToList();
+            List<User> allUsers = new List<User>();
+            
             foreach (var u in teachers)
             {
-                users.allTeachers.Add(new _User(u.Id,u.UserName));
+                users.allTeachers.Add(new _User(u.Id, u.UserName));
             }
             foreach (var u in students)
             {
                 users.allStudents.Add(new _User(u.Id, u.UserName));
             }
+            
+            foreach (var item in allUsers)
+            {
+                    users.unregisteredUsers.Add(new _User(item.Id, item.UserName));
+                
+            }
+           
             return View(users);
         }
 
@@ -55,6 +64,13 @@ namespace Plagiarism_Checker.Controllers
             var user = await _userManager.FindByIdAsync(id);
             _userManager.DeleteAsync(user).Wait();
 
+            return RedirectToAction("UsersList", "Admin");
+        }
+        public async Task<IActionResult> ApproveApplication(string id)
+        {
+
+            //var user = _mapper.Map<User>(model);
+            //var result = await _userManager.CreateAsync(user, model.Password2);
             return RedirectToAction("UsersList", "Admin");
         }
     }

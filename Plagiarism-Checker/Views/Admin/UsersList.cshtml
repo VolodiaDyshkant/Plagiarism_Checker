@@ -3,9 +3,37 @@
     ViewData["Title"] = "UsersList";
 }
 
+<h2>Непідтверджені користувачі:</h2>
+<table class="table-dark">
+    <tr>
+        <th> Ім'я Користувача</th>
+        <th>        </th>
+        <th>        </th>
+    </tr>
+
+    @foreach (var item in Model.unregisteredUsers)
+    {
+        <tr>
+            <td>@item.name</td>
+            <td> @Html.ActionLink("Видалити", "DeleteApplication", new { Id = item.id })</td>
+            <td> @Html.ActionLink("Підтвердити", "ApproveApplication", new { Id = item.id })</td>
+        </tr>
+    }
+</table>
+
+@foreach (var i in Model.unregisteredUsers)
+{
+    <h4 style="float:left">@i.name</h4>
+    <div style="margin-left:auto; margin-right:0">
+        <button>Delete</button>
+        <button>Approve</button>/
+    </div>
+    <div style="clear:both;"></div>
+    <hr />
+}
 
 
-<form method="post" asp-controller="Admin" asp-action="Delete">
+<form method="post" asp-controller="Admin" asp-action="DeleteUser">
     <h2>Teachers:</h2>
     @foreach (var i in Model.allTeachers)
     {
@@ -28,4 +56,5 @@
         <div style="clear:both;"></div>
         <hr />
     }
+
 </form>

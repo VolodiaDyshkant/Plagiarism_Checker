@@ -223,3 +223,8 @@ D:\3 курс\_Net\Plagiarism-Checker-Nataha\Plagiarism-Checker\obj\Debug\netcor
 D:\3 курс\_Net\Plagiarism-Checker-Nataha\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Plagiarism-Checker.RazorTargetAssemblyInfo.cs
 D:\3 курс\_Net\Plagiarism-Checker-Nataha\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Plagiarism-Checker.Views.pdb
 D:\3 курс\_Net\Plagiarism-Checker-Nataha\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Plagiarism-Checker.csproj.CopyComplete
+C:\Users\Administrator\Documents\GitHub\net\Plagiarism_Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Razor\Views\Teacher\AddTask.cshtml.g.cs
+C:\Users\Administrator\Documents\GitHub\net\Plagiarism_Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Razor\Views\Teacher\ListSolvedTests.cshtml.g.cs
+C:\Users\Administrator\Documents\GitHub\net\Plagiarism_Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Razor\Views\Teacher\ListTests.cshtml.g.cs
+C:\Users\Administrator\Documents\GitHub\net\Plagiarism_Checker\Plagiarism-Checker\obj\Debug\netcoreapp2.2\Plagiarism-Checker.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Documents\GitHub\net\Plagiarism_Checker\Plagiarism-Checker\bin\Debug\netcoreapp2.2\Connected Services\Application Insights\ConnectedService.json

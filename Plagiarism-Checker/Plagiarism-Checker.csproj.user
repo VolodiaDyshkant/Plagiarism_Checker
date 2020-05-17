@@ -10,5 +10,6 @@
     <WebStackScaffolding_LayoutPageFile>~/Views/Shared/_TeacherLayout.cshtml</WebStackScaffolding_LayoutPageFile>
     <WebStackScaffolding_IsAsyncSelected>False</WebStackScaffolding_IsAsyncSelected>
     <WebStackScaffolding_ViewDialogWidth>600,125654450262</WebStackScaffolding_ViewDialogWidth>
+    <NameOfLastUsedPublishProfile>Lnu - Web Deploy</NameOfLastUsedPublishProfile>
   </PropertyGroup>
 </Project>
