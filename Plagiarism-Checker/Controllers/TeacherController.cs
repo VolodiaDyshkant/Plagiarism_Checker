@@ -36,7 +36,7 @@ namespace Plagiarism_Checker.Controllers
         public TeacherController(UserManager<User> userManager, TeacherTasks teacherTasks,
             IRepository<StudentLesson> student_Lesson, IRepository<Lesson> lesson, IRepository<Models.Task> task,
             IRepository<Assignment> assignment, IRepository<Solution> solution, IRepository<Schedule> schedule,
-            IRepository<Discipline> discipline, IRepository<Time> time, IRepository<Day> day, List<Subjects> _subjects, IRepository<Models.Group> group, StudentTasks _studentTasks)
+            IRepository<Discipline> discipline, IRepository<Time> time, IRepository<Day> day, List<Subjects> _subjects, IRepository<Models.Group> group)
         {
             _userManager = userManager;
             _Student_Lesson = student_Lesson;
