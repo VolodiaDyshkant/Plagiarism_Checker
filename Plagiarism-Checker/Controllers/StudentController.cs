@@ -118,7 +118,6 @@ namespace Plagiarism_Checker.Controllers
             var unsolvedTs = studentTasks.Tests.OrderBy(t => t.TaskAssignment.Deadline).ToList();
             return View(unsolvedTs);
         }
-        [HttpPost]
         public ActionResult AddSolutionPage(int id)
         {
             studentTasksUpdate(HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier));

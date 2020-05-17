@@ -6,15 +6,17 @@
 
     <form asp-action="AddTask" method="post">
         <label asp-for="taskAdd.IsTest">Тип завдання:</label><br>
-        <input type="checkbox" id="taskAdd.IsTest" name="taskAdd.IsTest" value="true"><br>
-        <input type="checkbox" id="taskAdd.IsTest" name="taskAdd.IsTest" value="false"><br>
+        <input type="checkbox" id="taskAdd.IsTest" name="taskAdd.IsTest" value="true"
+               style="display: initial; width: auto;margin: 0.42em;">Самостійна</input><br>
+        <input type="checkbox" id="taskAdd.IsTest" name="taskAdd.IsTest" value="false"
+               style="display: initial; width: auto;margin: 0.42em;">Домашня</input><br>
         <div><span asp-validation-for="taskAdd.IsTest" class="text-danger"></span></div>
 
         <label asp-for="taskAdd.Lesson">Оберіть дисципліну та групу:</label><br>
         <select asp-for="taskAdd.Lesson">
             @foreach (var item in Model.subjects)
             {
-            <option value="@item.LessonId">@item.NameOfDiscipline , @item.Group </option>
+                <option value="@item.LessonId">@item.NameOfDiscipline , @item.Group </option>
             }
         </select>
         <div><span asp-validation-for="taskAdd.Lesson"></span></div>

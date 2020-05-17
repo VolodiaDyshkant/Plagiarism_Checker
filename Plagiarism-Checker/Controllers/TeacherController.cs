@@ -146,7 +146,10 @@ namespace Plagiarism_Checker.Controllers
                 var Group = _Group.GetById(item.GroupId).Name;
                 string Time = _Day.GetById(item.DayId).Day1 + " " + _Time.GetById(item.TimeId).Time1.ToString();
                 var lesson = _Lesson.GetAll().Where(l => l.ScheduleId == item.Id).FirstOrDefault();
-                subjects.Add(new Models.Teacher.Subjects(NameDiscipline, Group, Time, item.GroupId, lesson.Id));
+                if (lesson != null)
+                {
+                    subjects.Add(new Models.Teacher.Subjects(NameDiscipline, Group, Time, item.GroupId, lesson.Id));
+                }
             }
         }
 
@@ -164,14 +167,20 @@ namespace Plagiarism_Checker.Controllers
             foreach (var item in current_sch)
             {
                 string NameDiscipline = _Discipline.GetById(item.DisciplineId).Name;
+                
                 var Group = _Group.GetById(item.GroupId).Name;
                 var lesson = _Lesson.GetAll().Where(l => l.ScheduleId == item.Id).FirstOrDefault();
-                var assign = _Assignment.GetById(_Task.GetById(lesson.TestTaskId).AssignmentId);
-                string Time = _Day.GetById(item.DayId).Day1 + " " + _Time.GetById(item.TimeId).Time1.ToString();
+                if (lesson != null)
+                {
+                    var assign = _Assignment.GetById(_Task.GetById(lesson.TestTaskId).AssignmentId);
 
-                teacherTasks.Tests.Add(new Models.Teacher._FullTask(new Models.Teacher.__Assignment(assign.Id, assign.Deadline, assign.Requirenments), NameDiscipline, Group, Time));
-                //var Student = _userManager.FindByIdAsync(_Group.GetById(item.GroupId).StudentId);
-                //string LectorName = r.Replace(Student.UserName, " ");
+                    string Time = _Day.GetById(item.DayId).Day1 + " " + _Time.GetById(item.TimeId).Time1.ToString();
+
+                    teacherTasks.Tests.Add(new Models.Teacher._FullTask(new Models.Teacher.__Assignment(assign.Id, assign.Deadline, assign.Requirenments), NameDiscipline, Group, Time));
+                    //var Student = _userManager.FindByIdAsync(_Group.GetById(item.GroupId).StudentId);
+                    //string LectorName = r.Replace(Student.UserName, " ");
+                }
+                
             }
 
         }

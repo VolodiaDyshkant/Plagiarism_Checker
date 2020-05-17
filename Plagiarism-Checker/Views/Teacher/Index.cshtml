@@ -23,11 +23,6 @@
             </div>
             <p style="color:#d8d8d8; font-size:13px">@item.TaskAssignment.Requirenments</p>
             <p style="color:#555454; font-size:10px; justify-content:flex-end;">@item.Group - @item.Time</p>
-
-            <div style="display: flex;justify-content: center;margin-top:8px">
-                <button style="font-size:6px; padding:0.0025em 0.75em; border:none;" type="submit" class="button2" onclick="location.href='@Url.Action("AddSolutionPage", "Student", new { id = item._Task.Id })'">Переглянути</button>
-
-            </div>
             <div style="clear:both;"></div>
         </div>
     }

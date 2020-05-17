@@ -43,6 +43,8 @@ namespace Plagiarism_Checker.Controllers
             .ForMember(u => u.StudentNumber, opt => opt.MapFrom(i => i.student_number))
             .ForMember(u => u.Nin, opt => opt.MapFrom(i => i.nin)));
             _mapper = new Mapper(config);
+
+
             _mapperAp = new Mapper(new MapperConfiguration(cfg => cfg.CreateMap<Registration, Applications>()));
         }
 
@@ -74,6 +76,14 @@ namespace Plagiarism_Checker.Controllers
             { 
                 await _userManager.DeleteAsync(user);
                 var appl = _mapperAp.Map<Applications>(model);
+                appl.Name = model.Name;
+                appl.Surname = model.Surname;
+                appl.IsTeacher = model.isTeacher;
+                appl.Password = model.Name;
+                appl.StudentNumber = model.student_number;
+                appl.Nin = model.nin;
+                appl.Password = model.Password2;
+                appl.Email = model.Email;
                 _applications.Insert(appl);
                 return View("ThanksFR", "Account");
             }
