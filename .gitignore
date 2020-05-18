@@ -6,3 +6,7 @@
 .vs/Plagiarism-Checker/v16/.suo
 .vs/Plagiarism-Checker/DesignTimeBuild/.dtbcache
 .vs/Plagiarism-Checker/config/applicationhost.config
+.vs/Plagiarism-Checker/v16/Server/sqlite3/storage.ide
+.vs/Plagiarism-Checker/v16/Server/sqlite3/storage.ide-shm
+.vs/Plagiarism-Checker/v16/Server/sqlite3/storage.ide-wal
+Plagiarism-Checker/obj/Debug/netcoreapp2.2/Plagiarism-Checker.csprojAssemblyReference.cache
